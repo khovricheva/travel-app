@@ -1,24 +1,32 @@
 .header {
+  display: flex;
+  justify-content: space-around;
+  height: 5rem;
+  background-color: rgb(0, 168, 247);
+  color: white;
+  align-items: center;
+
+  .inputForm {
     display: flex;
-    justify-content: space-around;
-    height: 5rem;
-    background-color: rgb(0, 168, 247);
-    color: white;
+    justify-content: space-between;
+    padding: 2px 4px;
     align-items: center;
+    width: 400px;
 
-    .inputForm {
-        display: flex;
-        justify-content: space-between;
-        padding: 2px 4px;
-        align-items: center;
-        width: 400px;
-        
-        .input {
-            margin-left: 5px;
-        }
-        .icon {
-            padding: 10px;
-        }
+    .input {
+      margin-left: 5px;
     }
-
+    .icon {
+      padding: 10px;
+    }
+  }
+  .selectForm {
+    min-width: 120px;
+    background-color: white;
+    border-radius: 5px;
+    
+    .MuiOutlinedInput-input {
+        padding: 14px;
+    }
+  }
 }
