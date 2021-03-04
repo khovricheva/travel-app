@@ -1,12 +1,12 @@
 import React from 'react';
 import './Footer.scss';
-import { Typography, Link, Box } from '@material-ui/core';
-import GitHubIcon from '@material-ui/icons/GitHub';
+// import { Typography, Link, Box } from '@material-ui/core';
+// import GitHubIcon from '@material-ui/icons/GitHub';
 
 const Footer = () => {
   return (
     <footer>
-      <Box align='center' display='flex' justifyContent='space-around'>
+      {/* <Box align='center' display='flex' justifyContent='space-around'>
         <Typography>
           <GitHubIcon></GitHubIcon>
           <Link href='https://github.com/ArtemSirobaba'>@ArtemSirobaba</Link>
@@ -30,7 +30,7 @@ const Footer = () => {
         component='p'
       >
         {new Date().getFullYear()}
-      </Typography>
+      </Typography> */}
     </footer>
   );
 };
