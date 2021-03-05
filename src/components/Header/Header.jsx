@@ -2,16 +2,15 @@ import React from 'react';
 import './Header.scss';
 import Input from './Input';
 import Language from './Language';
-// import { CssBaseline, AppBar, Toolbar, Typography } from '@material-ui/core';
-// import PublicIcon from '@material-ui/icons/Public';
+import Title from './Title';
+import { useLocation } from 'react-router-dom';
 
 const Header = () => {
+  const location = useLocation();
   return (
-    <header className='header'>
-      <div className='title'>
-        <h1>Travel App</h1>
-      </div>
-      <Input />
+    <header className="header">
+      <Title />
+      {location.pathname === '/' ? <Input /> : null}
       <Language />
     </header>
   );

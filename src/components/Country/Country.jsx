@@ -1,24 +1,38 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import './Country.scss';
-import countriesData from '../../data/countriesData.json';
+// import countriesData from '../../data/countriesData.json';
 
 const Country = (props) => {
-  const { slug } = props.match.params; //часть url  (имя страны)
+  const { slug } = props.match.params;
 
-  const [country, setCountry] = useState([]);
+  const [country, setCountry] = useState({});
 
   useEffect(() => {
-    countriesData.map((country, index) => {
-      if (slug === country.slug) {
-        setCountry(countriesData[index]);
+    // countriesData.map((country, index) =>
+    //   slug === country.slug ? setCountry(countriesData[index]) : null
+    // );
+    let isCancelled = false;
+    const getData = async () => {
+      try {
+        const result = await axios.get(
+          `https://artemsirobaba.github.io/countries/${slug}.json`
+        );
+        if (!isCancelled) setCountry(result.data);
+      } catch (e) {
+        if (!isCancelled) {
+          console.log(e.message);
+        }
       }
-    });
-  }, []);
+    };
+    getData();
+    return () => (isCancelled = true);
+  }, [slug]);
 
   return (
-    <div className='country'>
-      <img src={country.img} alt='country' className='countryImage' />
-      <h2 className='countryName'>{country.countryName}</h2>
+    <div className="country">
+      <img src={country.img} alt="country" className="countryImage" />
+      <h2 className="countryName">{country.countryName}</h2>
       <div>
         <h3>Capital</h3>
         {country.capitalName}

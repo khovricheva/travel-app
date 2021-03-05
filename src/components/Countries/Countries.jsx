@@ -1,6 +1,5 @@
 import React from 'react';
 import './Countries.scss';
-// import images from './images';
 import countriesData from '../../data/countriesData.json';
 
 import { Link } from 'react-router-dom';
