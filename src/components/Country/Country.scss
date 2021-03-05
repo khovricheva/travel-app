@@ -1,0 +1,15 @@
+.country {
+  padding: 1rem;
+  div {
+    padding-bottom: 10px;
+  }
+  .countryImage {
+    width: 100%;
+    object-fit: cover;
+    height: 300px;
+    object-position: 50% 75%;
+  }
+  .countryName {
+    text-align: center;
+  }
+}

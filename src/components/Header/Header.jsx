@@ -7,8 +7,8 @@ import Language from './Language';
 
 const Header = () => {
   return (
-    <header className="header">
-      <div className="title">
+    <header className='header'>
+      <div className='title'>
         <h1>Travel App</h1>
       </div>
       <Input />

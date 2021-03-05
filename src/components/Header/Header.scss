@@ -15,6 +15,7 @@
 
     .input {
       margin-left: 5px;
+      width: 100%;
     }
     .icon {
       padding: 10px;
@@ -24,9 +25,9 @@
     min-width: 120px;
     background-color: white;
     border-radius: 5px;
-    
+
     .MuiOutlinedInput-input {
-        padding: 14px;
+      padding: 14px;
     }
   }
 }
