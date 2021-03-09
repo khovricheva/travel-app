@@ -1,13 +1,34 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Countries.scss';
-import countriesData from '../../data/countriesData.json';
+// import countriesData from '../../data/countriesData.json';
+import axios from 'axios';
 
 import { Link } from 'react-router-dom';
 
 const Countries = () => {
+  const [countries, setCountries] = useState([]);
+
+  useEffect(() => {
+    let isCancelled = false;
+    const getData = async () => {
+      try {
+        const result = await axios.get(
+          `https://artemsirobaba.github.io/countries/all.json`
+        );
+        if (!isCancelled) setCountries(result.data);
+      } catch (e) {
+        if (!isCancelled) {
+          console.log(e.message);
+        }
+      }
+    };
+    getData();
+    return () => (isCancelled = true);
+  }, []);
+
   return (
     <div className='countries'>
-      {countriesData.map((item) => (
+      {countries.map((item) => (
         <Link key={item.id} to={`/${item.countryName.toLowerCase()}`}>
           <div className='country'>
             <img

@@ -30,9 +30,9 @@ const Country = (props) => {
   }, [slug]);
 
   return (
-    <div className="country">
-      <img src={country.img} alt="country" className="countryImage" />
-      <h2 className="countryName">{country.countryName}</h2>
+    <div className='country'>
+      <img src={country.img} alt='country' className='countryImage' />
+      <h2 className='countryName'>{country.countryName}</h2>
       <div>
         <h3>Capital</h3>
         {country.capitalName}
