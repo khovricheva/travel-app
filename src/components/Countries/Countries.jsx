@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './Countries.scss';
-// import countriesData from '../../data/countriesData.json';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import axios from 'axios';
 
-import { Link } from 'react-router-dom';
-
-const Countries = () => {
+const Countries = (props) => {
   const [countries, setCountries] = useState([]);
 
   useEffect(() => {
@@ -15,7 +14,9 @@ const Countries = () => {
         const result = await axios.get(
           `https://artemsirobaba.github.io/countries/all.json`
         );
-        if (!isCancelled) setCountries(result.data);
+        if (!isCancelled) {
+          setCountries(result.data);
+        }
       } catch (e) {
         if (!isCancelled) {
           console.log(e.message);
@@ -23,13 +24,19 @@ const Countries = () => {
       }
     };
     getData();
+
     return () => (isCancelled = true);
   }, []);
 
+  const newState = countries.filter(
+    (item) => item.countryName === props.countries.countries
+  );
+  console.log(props.countries.countries);
+
   return (
     <div className='countries'>
-      {countries.map((item) => (
-        <Link key={item.id} to={`/${item.countryName.toLowerCase()}`}>
+      {newState.map((item, index) => (
+        <Link key={index} to={`/${item.countryName.toLowerCase()}`}>
           <div className='country'>
             <img
               src={process.env.PUBLIC_URL + item.img}
@@ -45,4 +52,11 @@ const Countries = () => {
   );
 };
 
-export default Countries;
+// export default Countries;
+function mapStateToProps(state) {
+  return {
+    countries: state.countries,
+  };
+}
+
+export default connect(mapStateToProps)(Countries);
