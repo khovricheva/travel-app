@@ -11,8 +11,8 @@ const App = () => {
     <div>
       <Header />
       <Switch>
-        <Route path="/" exact component={Countries} />
-        <Route path="/:slug" component={Country} />
+        <Route path='/' exact component={Countries} />
+        <Route path='/:slug' component={Country} />
       </Switch>
       <Footer />
     </div>

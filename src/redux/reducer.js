@@ -25,14 +25,15 @@ export const langReducer = (state = initialLangState, action) => {
 };
 
 const initialInputState = {
-  countries: '',
+  searchQuery: '',
 };
 
-export const countriesReducer = (state = initialInputState, action) => {
+export const searchQueryReducer = (state = initialInputState, action) => {
   switch (action.type) {
-    case 'GET_COUNTRIES': {
+    case 'SEARCH_QUERY': {
       return {
-        countries: action.value,
+        // ...state,
+        searchQuery: action.value,
       };
     }
 

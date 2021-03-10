@@ -5,24 +5,28 @@ import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
 import ClearIcon from '@material-ui/icons/Clear';
 import { connect } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 const Input = (props) => {
-  console.log(props);
-  const [inputValue, setInputValue] = useState('');
+  const history = useHistory();
 
-  const handleChange = (e) => {
-    props.dispatch({ type: 'GET_COUNTRIES', value: e.target.value });
+  const handleChangeInput = (e) => {
+    props.dispatch({ type: 'SEARCH_QUERY', value: e.target.value });
   };
 
   const handleEnter = (e) => {
     if (e.code === 'Enter' || e.code === 'NumpadEnter') {
-      console.log('Enter key was pressed');
-      console.log(inputValue);
+      searchQuery();
     }
   };
+  const clearInput = () => {
+    props.dispatch({ type: 'SEARCH_QUERY', value: '' });
+  };
 
-  const searchQuery = (e) => {
-    console.log(inputValue);
+  const searchQuery = () => {
+    // works only for counrtyName
+    const path = props.searchQuery.searchQuery.toLowerCase();
+    history.push(`/${path}`);
   };
 
   return (
@@ -31,17 +35,15 @@ const Input = (props) => {
         className='input'
         placeholder='Search Country'
         type='text'
-        // autoFocus={true}
-        ref={inputRef}
-        value={props.countries.countries}
-        onChange={(e) => handleChange(e)}
+        autoFocus={true}
+        value={props.searchQuery.searchQuery}
+        onChange={(e) => handleChangeInput(e)}
         onKeyDown={(e) => handleEnter(e)}
       />
-      <IconButton className='icon' onClick={() => setInputValue('')}>
+      <IconButton className='icon' onClick={clearInput}>
         <ClearIcon />
       </IconButton>
-
-      <IconButton className='icon' onClick={(e) => searchQuery(e)}>
+      <IconButton className='icon' onClick={searchQuery}>
         <SearchIcon />
       </IconButton>
     </Paper>
@@ -50,7 +52,7 @@ const Input = (props) => {
 
 function mapStateToProps(state) {
   return {
-    countries: state.countries,
+    searchQuery: state.searchQuery,
   };
 }
 

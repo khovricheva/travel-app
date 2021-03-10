@@ -8,7 +8,7 @@ import { useLocation } from 'react-router-dom';
 const Header = () => {
   const location = useLocation();
   return (
-    <header className="header">
+    <header className='header'>
       <Title />
       {location.pathname === '/' ? <Input /> : null}
       <Language />

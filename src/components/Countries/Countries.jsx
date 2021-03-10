@@ -28,10 +28,17 @@ const Countries = (props) => {
     return () => (isCancelled = true);
   }, []);
 
-  const newState = countries.filter(
-    (item) => item.countryName === props.countries.countries
+  let newState = countries.filter(
+    (item) =>
+      item.countryName
+        .toLowerCase()
+        .includes(props.searchQuery.searchQuery.toLowerCase()) ||
+      item.capitalName
+        .toLowerCase()
+        .includes(props.searchQuery.searchQuery.toLowerCase())
   );
-  console.log(props.countries.countries);
+
+  if (newState.length === 0) newState = countries;
 
   return (
     <div className='countries'>
@@ -52,10 +59,9 @@ const Countries = (props) => {
   );
 };
 
-// export default Countries;
 function mapStateToProps(state) {
   return {
-    countries: state.countries,
+    searchQuery: state.searchQuery,
   };
 }
 
