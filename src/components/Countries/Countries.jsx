@@ -6,19 +6,22 @@ import { Link } from 'react-router-dom';
 
 const Countries = () => {
   return (
-    <div className='countries'>
+    <div className="countries">
       {countriesData.map((item) => (
-        <Link key={item.id} to={`/${item.countryName.toLowerCase()}`}>
-          <div className='country'>
-            <img
-              src={process.env.PUBLIC_URL + item.img}
-              className='countryImage'
-              alt='countries'
-            />
-            <h1>{item.countryName}</h1>
-            <h3>{item.capitalName}</h3>
-          </div>
-        </Link>
+        <div
+          className="country"
+          style={{
+            backgroundImage: `url(${process.env.PUBLIC_URL + item.img})`,
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+          }}
+        >
+          <Link key={item.id} to={`/${item.countryName.toLowerCase()}`}>
+            <h1 className="countryName">{item.countryName}</h1>
+            <h3 className="countryCapital">{item.capitalName}</h3>
+          </Link>
+        </div>
       ))}
     </div>
   );
