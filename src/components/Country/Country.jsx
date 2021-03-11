@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import './Country.scss';
+import Widgets from './Vidgets/Widgets';
 // import countriesData from '../../data/countriesData.json';
 
 const Country = (props) => {
@@ -61,6 +62,7 @@ const Country = (props) => {
         <h3>Currency</h3>
         {country.currency}
       </div>
+      <Widgets city={country.capitalName} currency={country.currency} />
     </div>
   );
 };
