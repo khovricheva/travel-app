@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Countries.scss';
-import { Link } from 'react-router-dom';
+import { Link, Redirect, useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import axios from 'axios';
 
@@ -12,7 +12,7 @@ const Countries = (props) => {
     const getData = async () => {
       try {
         const result = await axios.get(
-          `https://artemsirobaba.github.io/countries/all.json`
+          `https://restcountries.eu/rest/v2/all`
         );
         if (!isCancelled) {
           setCountries(result.data);
@@ -28,30 +28,28 @@ const Countries = (props) => {
     return () => (isCancelled = true);
   }, []);
 
-  let newState = countries.filter(
+  const newState = countries.filter(
     (item) =>
-      item.countryName
+      item.name
         .toLowerCase()
         .includes(props.searchQuery.searchQuery.toLowerCase()) ||
-      item.capitalName
+      item.capital
         .toLowerCase()
         .includes(props.searchQuery.searchQuery.toLowerCase())
   );
 
-  if (newState.length === 0) newState = countries;
+  if (newState.length === 0) {
+    return <div> we didn't have this country yet, sorry</div>;
+  }
 
   return (
-    <div className='countries'>
+    <div className="countries">
       {newState.map((item, index) => (
-        <Link key={index} to={`/${item.countryName.toLowerCase()}`}>
-          <div className='country'>
-            <img
-              src={process.env.PUBLIC_URL + item.img}
-              className='countryImage'
-              alt='countries'
-            />
-            <h1>{item.countryName}</h1>
-            <h3>{item.capitalName}</h3>
+        <Link key={index} to={`/${item.name.toLowerCase()}`}>
+          <div className="country">
+            <img src={item.flag} loading='lazy' className="countryImage" alt="countries" />
+            <h1>{item.name}</h1>
+            <h3>{item.capital}</h3>
           </div>
         </Link>
       ))}

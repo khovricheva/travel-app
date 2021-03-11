@@ -36,7 +36,6 @@ export const searchQueryReducer = (state = initialInputState, action) => {
         searchQuery: action.value,
       };
     }
-
     default:
       return state;
   }

@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Footer.scss';
+import axios from 'axios';
 // import { Typography, Link, Box } from '@material-ui/core';
 // import GitHubIcon from '@material-ui/icons/GitHub';
 
 const Footer = () => {
+ 
   return (
     <footer>
+      <div></div>
       {/* <Box align='center' display='flex' justifyContent='space-around'>
         <Typography>
           <GitHubIcon></GitHubIcon>

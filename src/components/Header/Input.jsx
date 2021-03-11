@@ -10,17 +10,10 @@ import { useHistory } from 'react-router-dom';
 const Input = (props) => {
   const history = useHistory();
 
-  const handleChangeInput = (e) => {
-    props.dispatch({ type: 'SEARCH_QUERY', value: e.target.value });
-  };
-
   const handleEnter = (e) => {
     if (e.code === 'Enter' || e.code === 'NumpadEnter') {
       searchQuery();
     }
-  };
-  const clearInput = () => {
-    props.dispatch({ type: 'SEARCH_QUERY', value: '' });
   };
 
   const searchQuery = () => {
@@ -29,21 +22,32 @@ const Input = (props) => {
     history.push(`/${path}`);
   };
 
+  const handleChangeInput = (e) => {
+    props.dispatch({ type: 'SEARCH_QUERY', value: e.target.value });
+  };
+
+  const clearInput = () => {
+    props.dispatch({ type: 'SEARCH_QUERY', value: '' });
+  };
+
   return (
-    <Paper className='inputForm' noValidate autoComplete='off'>
+    <Paper className="inputForm" noValidate autoComplete="off">
       <InputBase
-        className='input'
-        placeholder='Search Country'
-        type='text'
+        className="input"
+        placeholder="Search Country"
+        type="text"
         autoFocus={true}
         value={props.searchQuery.searchQuery}
         onChange={(e) => handleChangeInput(e)}
         onKeyDown={(e) => handleEnter(e)}
       />
-      <IconButton className='icon' onClick={clearInput}>
+      <IconButton className="icon" onClick={clearInput}>
         <ClearIcon />
       </IconButton>
-      <IconButton className='icon' onClick={searchQuery}>
+      <IconButton
+        className="icon"
+        onClick={() => props.dispatch({ type: 'SEARCH_START' })}
+      >
         <SearchIcon />
       </IconButton>
     </Paper>

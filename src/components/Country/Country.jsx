@@ -4,14 +4,12 @@ import './Country.scss';
 // import countriesData from '../../data/countriesData.json';
 
 const Country = (props) => {
+
   const { slug } = props.match.params;
 
   const [country, setCountry] = useState({});
-
+  
   useEffect(() => {
-    // countriesData.map((country, index) =>
-    //   slug === country.slug ? setCountry(countriesData[index]) : null
-    // );
     let isCancelled = false;
     const getData = async () => {
       try {
@@ -22,6 +20,7 @@ const Country = (props) => {
       } catch (e) {
         if (!isCancelled) {
           console.log(e.message);
+          setCountry('Error')
         }
       }
     };
@@ -29,6 +28,10 @@ const Country = (props) => {
     return () => (isCancelled = true);
   }, [slug]);
 
+  if(country === 'Error') {
+    return <div>Sorry, something went wrong </div>
+  }
+  
   return (
     <div className='country'>
       <img src={country.img} alt='country' className='countryImage' />
