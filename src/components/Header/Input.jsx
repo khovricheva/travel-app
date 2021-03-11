@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import Paper from '@material-ui/core/Paper';
 import InputBase from '@material-ui/core/InputBase';
 import IconButton from '@material-ui/core/IconButton';
@@ -6,20 +6,35 @@ import SearchIcon from '@material-ui/icons/Search';
 import ClearIcon from '@material-ui/icons/Clear';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import { MyContextData } from '../../context';
 
 const Input = (props) => {
+
+  const context = useContext(MyContextData);
+
   const history = useHistory();
 
+  const newContext = context.filter(
+    (item) =>
+      item.name
+        .toLowerCase()
+        .includes(props.searchQuery.searchQuery.toLowerCase()) ||
+      item.capital
+        .toLowerCase()
+        .includes(props.searchQuery.searchQuery.toLowerCase())
+  );
+
   const handleEnter = (e) => {
-    if (e.code === 'Enter' || e.code === 'NumpadEnter') {
+    if (
+      (e.code === 'Enter' && newContext.length === 1) ||
+      (e.code === 'NumpadEnter' && newContext.length === 1)
+    ) {
       searchQuery();
     }
   };
 
   const searchQuery = () => {
-    // works only for counrtyName
-    const path = props.searchQuery.searchQuery.toLowerCase();
-    history.push(`/${path}`);
+    history.push(`/${newContext[0].name.toLowerCase()}`);
   };
 
   const handleChangeInput = (e) => {

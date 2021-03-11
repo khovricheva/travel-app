@@ -1,6 +1,6 @@
 .countries {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
 
   .country {
     display: flex;
@@ -8,5 +8,26 @@
     border-radius: 10px;
     margin: 10px;
     height: 20rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .countries {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .countries {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .countries {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }

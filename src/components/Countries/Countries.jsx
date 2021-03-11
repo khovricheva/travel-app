@@ -1,32 +1,33 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import './Countries.scss';
-import { Link, Redirect, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import axios from 'axios';
+import { MyContextData } from '../../context';
 
 const Countries = (props) => {
-  const [countries, setCountries] = useState([]);
 
-  useEffect(() => {
-    let isCancelled = false;
-    const getData = async () => {
-      try {
-        const result = await axios.get(
-          `https://restcountries.eu/rest/v2/all`
-        );
-        if (!isCancelled) {
-          setCountries(result.data);
-        }
-      } catch (e) {
-        if (!isCancelled) {
-          console.log(e.message);
-        }
-      }
-    };
-    getData();
+  const countries = useContext(MyContextData);
 
-    return () => (isCancelled = true);
-  }, []);
+  // useEffect(() => {
+  //   let isCancelled = false;
+  //   const getData = async () => {
+  //     try {
+  //       const result = await axios.get(
+  //         `https://artemsirobaba.github.io/countries/all.json`
+  //       );
+  //       if (!isCancelled) {
+  //         setCountries(result.data);
+  //       }
+  //     } catch (e) {
+  //       if (!isCancelled) {
+  //         console.log(e.message);
+  //       }
+  //     }
+  //   };
+  //   getData();
+
+  //   return () => (isCancelled = true);
+  // }, []);
 
   const newState = countries.filter(
     (item) =>
@@ -47,7 +48,7 @@ const Countries = (props) => {
       {newState.map((item, index) => (
         <Link key={index} to={`/${item.name.toLowerCase()}`}>
           <div className="country">
-            <img src={item.flag} loading='lazy' className="countryImage" alt="countries" />
+            <img src={item.introPhoto} loading='lazy' className="countryImage" alt="countries" />
             <h1>{item.name}</h1>
             <h3>{item.capital}</h3>
           </div>
