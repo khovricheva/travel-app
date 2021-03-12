@@ -6,11 +6,14 @@ import Title from './Title';
 import { useLocation } from 'react-router-dom';
 
 const Header = () => {
+  
   const location = useLocation();
+
   return (
     <header className="header">
       <Title />
       {location.pathname === '/' ? <Input /> : null}
+      {location.pathname.includes('text') ? <Input /> : null}
       <Language />
     </header>
   );

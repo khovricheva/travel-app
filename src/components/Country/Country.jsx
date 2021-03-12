@@ -14,7 +14,7 @@ const Country = (props) => {
     const getData = async () => {
       try {
         const result = await axios.get(
-          `https://artemsirobaba.github.io/countries/${slug}.json`
+          `https://travel-api-git-main-imbatman.vercel.app/countryInfo/${slug}.json`
         );
         if (!isCancelled) setCountry(result.data);
       } catch (e) {
@@ -27,7 +27,7 @@ const Country = (props) => {
     getData();
     return () => (isCancelled = true);
   }, [slug]);
-
+  console.log(country)
   if (country === 'Error') {
     return <div>Sorry, something went wrong </div>;
   }
