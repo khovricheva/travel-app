@@ -28,14 +28,19 @@ const WeatherWidget = ({ city }) => {
     <>
       {Object.keys(weatherData).length && (
         <div className='weatherWidget'>
+          <h4>Weather forecast</h4>
           <img
-            id='weather-icon'
+            className='weather-icon'
             src={`http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`}
           />
-          <div id='temperature'>{weatherData.main.temp.toFixed(0)}°C</div>
-          <div id='humidity'>humidity: {weatherData.main.humidity} %</div>
-          <div id='wind'>wind: {weatherData.wind.speed} m/s</div>
-          <div id='weather-description'>
+          <div className='temperature'>
+            {weatherData.main.temp.toFixed(0)}°C
+          </div>
+          <div className='humidity'>
+            humidity: {weatherData.main.humidity} %
+          </div>
+          <div className='wind'>wind: {weatherData.wind.speed} m/s</div>
+          <div className='weather-description'>
             {weatherData.weather[0].description}
           </div>
         </div>

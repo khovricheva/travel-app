@@ -1,11 +1,12 @@
 import React from 'react';
-import WeatherWidget from './WeatherWidget';
-import TimeWidget from './TimeWidget';
-import CurrencyWidget from './CurrencyWidget';
+import WeatherWidget from './WeatherWidget/WeatherWidget';
+import TimeWidget from './TimeWidget/TimeWidget';
+import CurrencyWidget from './CurrencyWidget/CurrencyWidget';
+import './Widgets.scss';
 
 const Widgets = (props) => {
   return (
-    <div>
+    <div className='widgets'>
       <WeatherWidget city={props.city} />
       <TimeWidget city={props.city} />
       <CurrencyWidget currency={props.currency} />

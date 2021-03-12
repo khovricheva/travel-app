@@ -9,17 +9,16 @@ import { useHistory } from 'react-router-dom';
 import { MyContextData } from '../../context';
 
 const Input = (props) => {
-
   const context = useContext(MyContextData);
 
   const history = useHistory();
 
   const newContext = context.filter(
     (item) =>
-      item.name
+      item.nameEn
         .toLowerCase()
         .includes(props.searchQuery.searchQuery.toLowerCase()) ||
-      item.capital
+      item.capitalEn
         .toLowerCase()
         .includes(props.searchQuery.searchQuery.toLowerCase())
   );
@@ -34,7 +33,7 @@ const Input = (props) => {
   };
 
   const searchQuery = () => {
-    history.push(`/${newContext[0].name.toLowerCase()}`);
+    history.push(`/${newContext[0].nameEn.toLowerCase()}`);
   };
 
   const handleChangeInput = (e) => {
@@ -46,21 +45,21 @@ const Input = (props) => {
   };
 
   return (
-    <Paper className="inputForm" noValidate autoComplete="off">
+    <Paper className='inputForm' noValidate autoComplete='off'>
       <InputBase
-        className="input"
-        placeholder="Search Country"
-        type="text"
+        className='input'
+        placeholder='Search Country'
+        type='text'
         autoFocus={true}
         value={props.searchQuery.searchQuery}
         onChange={(e) => handleChangeInput(e)}
         onKeyDown={(e) => handleEnter(e)}
       />
-      <IconButton className="icon" onClick={clearInput}>
+      <IconButton className='icon' onClick={clearInput}>
         <ClearIcon />
       </IconButton>
       <IconButton
-        className="icon"
+        className='icon'
         onClick={() => props.dispatch({ type: 'SEARCH_START' })}
       >
         <SearchIcon />
