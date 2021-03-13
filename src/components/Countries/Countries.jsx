@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 const Countries = (props) => {
-  const [countries, setCountries] = useState([]);
 
+  const [countries, setCountries] = useState([]);
   useEffect(() => {
     let isCancelled = false;
     const getData = async () => {
@@ -38,7 +38,7 @@ const Countries = (props) => {
         .includes(props.searchQuery.searchQuery.toLowerCase())
   );
 
-  console.log(newState);
+  // console.log(newState);
 
   // if (newState.length === 0) {
   //   return <div> we didn't have this country yet, sorry</div>;
@@ -46,7 +46,7 @@ const Countries = (props) => {
 
   return (
     <div className="countries">
-      {countries.map((item, index) => (
+      {newState.map((item, index) => (
         <Link key={index} to={`/${item.nameEn.toLowerCase()}`}>
           <div className="country">
             <img

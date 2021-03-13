@@ -8,11 +8,10 @@ import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 const Input = (props) => {
-
   const history = useHistory();
 
   const handleEnter = (e) => {
-    if (e.code === 'Enter' || e.code === 'NumpadEnter') {
+    if (e.code === 'Enter' || e.code === 'NumpadEnter' || e === 'start') {
       history.push(`/search/text=${props.searchQuery.searchQuery}`);
     }
   };
@@ -39,10 +38,7 @@ const Input = (props) => {
       <IconButton className="icon" onClick={clearInput}>
         <ClearIcon />
       </IconButton>
-      <IconButton
-        className="icon"
-        onClick={() => props.dispatch({ type: 'SEARCH_START' })}
-      >
+      <IconButton className="icon" onClick={() => handleEnter('start')}>
         <SearchIcon />
       </IconButton>
     </Paper>

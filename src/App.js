@@ -12,7 +12,7 @@ const App = () => {
         <Header />
         <Switch>
           <Route path="/" exact component={Countries} />
-          {/* <Route path="/search/text=" component={Countries} /> */}
+          <Route path="/search/text=" component={Countries} />
           <Route path="/contry/:slug" component={Country} />
         </Switch>
         <Footer />
