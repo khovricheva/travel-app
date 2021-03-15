@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <header className="header">
       <Title />
-      {location.pathname === '/' ? <Input /> : null}
+      {!location.pathname.includes('country') ? <Input /> : null}
       <Language />
     </header>
   );

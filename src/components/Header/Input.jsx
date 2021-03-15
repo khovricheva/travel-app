@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Paper from '@material-ui/core/Paper';
 import InputBase from '@material-ui/core/InputBase';
 import IconButton from '@material-ui/core/IconButton';
@@ -6,13 +6,19 @@ import SearchIcon from '@material-ui/icons/Search';
 import ClearIcon from '@material-ui/icons/Clear';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import { CountryContext } from '../../context/GlobalContext';
 
 const Input = (props) => {
   const history = useHistory();
 
+  const countries = useContext(CountryContext);
+
   const handleEnter = (e) => {
     if (e.code === 'Enter' || e.code === 'NumpadEnter' || e === 'start') {
-      history.push(`/search/text=${props.searchQuery.searchQuery}`);
+      if (props.searchQuery.searchQuery.length !== 0) {
+        history.push(`/search/text=${props.searchQuery.searchQuery}`);
+        props.dispatch({ type: 'SEARCH_QUERY', value: '' });
+      }
     }
   };
 
