@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import './Country.scss';
-import Widgets from './Widgets/Widgets';
 // import countriesData from '../../data/countriesData.json';
 
 const Country = (props) => {
@@ -10,27 +9,25 @@ const Country = (props) => {
   const [country, setCountry] = useState({});
 
   useEffect(() => {
+    // countriesData.map((country, index) =>
+    //   slug === country.slug ? setCountry(countriesData[index]) : null
+    // );
     let isCancelled = false;
     const getData = async () => {
       try {
         const result = await axios.get(
-          `https://travel-api-git-main-imbatman.vercel.app/countryInfo/${slug}.json`
+          `https://artemsirobaba.github.io/countries/${slug}.json`
         );
         if (!isCancelled) setCountry(result.data);
       } catch (e) {
         if (!isCancelled) {
           console.log(e.message);
-          setCountry('Error');
         }
       }
     };
     getData();
     return () => (isCancelled = true);
   }, [slug]);
-  console.log(country)
-  if (country === 'Error') {
-    return <div>Sorry, something went wrong </div>;
-  }
 
   return (
     <div className='country'>
@@ -64,7 +61,6 @@ const Country = (props) => {
         <h3>Currency</h3>
         {country.currency}
       </div>
-      <Widgets city={country.capitalName} currency={country.currency} />
     </div>
   );
 };

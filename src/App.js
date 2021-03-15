@@ -9,13 +9,13 @@ import { Switch, Route } from 'react-router-dom';
 const App = () => {
   return (
     <div>
-        <Header />
-        <Switch>
-          <Route path="/" exact component={Countries} />
-          <Route path="/search/text=" component={Countries} />
-          <Route path="/contry/:slug" component={Country} />
-        </Switch>
-        <Footer />
+      <Header />
+      <Switch>
+        <Route path='/' exact component={Countries} />
+        <Route path='/search/text=' component={Countries} />
+        <Route path='/cozntry/:slug' component={Country} />
+      </Switch>
+      <Footer />
     </div>
   );
 };

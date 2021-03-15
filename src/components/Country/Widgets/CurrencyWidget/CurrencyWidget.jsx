@@ -3,8 +3,9 @@ import axios from 'axios';
 import './CurrencyWidget.scss';
 
 const CurrencyWidget = (props) => {
+  // EU: 'EU',
+
   const data = {
-    EU: 'EU',
     Австрия: 'AT',
     Бельгия: 'BE',
     Болгария: 'BG',
