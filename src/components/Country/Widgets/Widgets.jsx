@@ -7,9 +7,12 @@ import './Widgets.scss';
 const Widgets = (props) => {
   return (
     <div className='widgets'>
+      <TimeWidget city={props.city} lat={props.lat} lon={props.lon} />
       <WeatherWidget city={props.city} />
-      <TimeWidget city={props.city} />
-      <CurrencyWidget currency={props.currency} />
+      <CurrencyWidget
+        currencyCode={props.currencyCode}
+        countryCode={props.countryCode}
+      />
     </div>
   );
 };

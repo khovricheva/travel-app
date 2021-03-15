@@ -4,7 +4,6 @@ import './WeatherWidget.scss';
 
 const WeatherWidget = ({ city }) => {
   const [weatherData, setWeather] = useState({});
-  console.log(city);
 
   useEffect(() => {
     let isCancelled = false;
@@ -28,10 +27,11 @@ const WeatherWidget = ({ city }) => {
     <>
       {Object.keys(weatherData).length && (
         <div className='weatherWidget'>
-          <h4>Weather forecast</h4>
+          <h4>Weather in {city}</h4>
           <img
             className='weather-icon'
             src={`http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`}
+            alt='weather-img'
           />
           <div className='temperature'>
             {weatherData.main.temp.toFixed(0)}°C
