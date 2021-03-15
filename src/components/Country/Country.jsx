@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import './Country.scss';
-// import countriesData from '../../data/countriesData.json';
+import Widgets from './Widgets/Widgets';
 
 const Country = (props) => {
   const { slug } = props.match.params;
@@ -32,38 +32,37 @@ const Country = (props) => {
   }
 
   return (
-    <div className='country'>
-      <img src={country.img} alt='country' className='countryImage' />
-      <h2 className='countryName'>{country.countryName}</h2>
-      <div>
-        <h3>Capital</h3>
-        {country.capitalName}
-      </div>
-      <div>
-        <h3>Geography</h3>
-        {country.geography}
-      </div>
-      <div>
-        <h3>Government</h3>
-        {country.government}
-      </div>
-      <div>
-        <h3>Weather</h3>
-        {country.weather}
-      </div>
-      <div>
-        <h3>Language</h3>
-        {country.language}
-      </div>
-      <div>
-        <h3>Religion</h3>
-        {country.religion}
-      </div>
-      <div>
-        <h3>Currency</h3>
-        {country.currency}
-      </div>
-    </div>
+    <>
+      {Object.keys(country).length !== 0 && (
+        <div className='country'>
+          {/* <img src={country.img} alt='country' className='countryImage' /> */}
+          <h2 className='countryName'>{country.name.en}</h2>
+          <div>
+            <h3>Capital</h3>
+            {country.capital.en}
+          </div>
+          <div>
+            <h3>Info</h3>
+            {country.info.en}
+          </div>
+          <div>
+            <h3>Population</h3>
+            {country.population} people
+          </div>
+          <div>
+            <h3>Currency</h3>
+            {country.currencies.name}, {country.currencies.symbol}
+          </div>
+          <Widgets
+            city={country.capital.en}
+            currencyCode={country.currencies.code}
+            countryCode={country.alpha2Code}
+            lat={country.coordinates.lat}
+            lon={country.coordinates.lon}
+          />
+        </div>
+      )}
+    </>
   );
 };
 

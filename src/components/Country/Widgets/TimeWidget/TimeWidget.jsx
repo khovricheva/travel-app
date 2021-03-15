@@ -1,22 +1,37 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const TimeWidget = (props) => {
-  // http://api.timezonedb.com/v2.1/get-time-zone?key=8XYGJFY85NDT&format=json&by=position&lat=40.689247&lng=-74.044502
+const TimeWidget = ({ city, lat, lon }) => {
+  const [time, setTime] = useState('');
 
-  // let unix_timestamp = 1464453737;
+  const formattedTime = (timestamp) => {
+    // const date = new Date(timestamp * 1000);
+    // const hours = date.getHours();
+    // const minutes = '0' + date.getMinutes();
+    // const seconds = '0' + date.getSeconds();
+    // return hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+    return timestamp.substr(11);
+  };
 
-  // var date = new Date(unix_timestamp * 1000);
-  // var hours = date.getHours();
-  // var minutes = '0' + date.getMinutes();
-  // var seconds = '0' + date.getSeconds();
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const getTime = async () => {
+        const result = await axios.get(
+          `http://api.timezonedb.com/v2.1/get-time-zone?key=8XYGJFY85NDT&format=json&by=position&lat=${lat}&lng=${lon}`
+        );
+        setTime(formattedTime(result.data.formatted));
+      };
+      getTime();
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [city, lat, lon]);
 
-  // var formattedTime =
-  //   hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
-
-  // console.log(formattedTime);
-
-  return <div></div>;
+  return (
+    <div className='timeWidget'>
+      <h4>Local time in {city}</h4>
+      <div>{time}</div>
+    </div>
+  );
 };
 
 export default TimeWidget;
