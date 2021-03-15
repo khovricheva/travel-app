@@ -6,7 +6,6 @@ import Widgets from './Widgets/Widgets';
 
 const Country = (props) => {
   const { slug } = props.match.params;
-
   const [country, setCountry] = useState({});
 
   useEffect(() => {
