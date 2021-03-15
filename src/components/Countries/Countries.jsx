@@ -50,6 +50,7 @@ const Countries = (props) => {
         <Link key={index} to={`/${item.nameEn.toLowerCase()}`}>
           <div className="country">
             <img
+              loading="lazy"
               src={item.introPhoto}
               className="countryImage"
               alt="countries"

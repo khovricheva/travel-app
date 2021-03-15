@@ -13,7 +13,6 @@ const Header = () => {
     <header className="header">
       <Title />
       {location.pathname === '/' ? <Input /> : null}
-      {location.pathname.includes('text') ? <Input /> : null}
       <Language />
     </header>
   );

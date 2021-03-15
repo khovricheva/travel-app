@@ -9,25 +9,27 @@ const Country = (props) => {
   const [country, setCountry] = useState({});
 
   useEffect(() => {
-    // countriesData.map((country, index) =>
-    //   slug === country.slug ? setCountry(countriesData[index]) : null
-    // );
     let isCancelled = false;
     const getData = async () => {
       try {
         const result = await axios.get(
-          `https://artemsirobaba.github.io/countries/${slug}.json`
+          `https://travel-api-git-main-imbatman.vercel.app/countryInfo/${slug}.json`
         );
         if (!isCancelled) setCountry(result.data);
       } catch (e) {
         if (!isCancelled) {
           console.log(e.message);
+          setCountry('Error');
         }
       }
     };
     getData();
     return () => (isCancelled = true);
   }, [slug]);
+
+  if (country === 'Error') {
+    return <div>Sorry, something went wrong </div>;
+  }
 
   return (
     <div className='country'>

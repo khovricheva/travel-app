@@ -12,8 +12,7 @@ const App = () => {
       <Header />
       <Switch>
         <Route path='/' exact component={Countries} />
-        <Route path='/search/text=' component={Countries} />
-        <Route path='/cozntry/:slug' component={Country} />
+        <Route path='/:slug' component={Country} />
       </Switch>
       <Footer />
     </div>
