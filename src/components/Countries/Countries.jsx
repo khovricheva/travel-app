@@ -28,15 +28,15 @@ const Countries = (props) => {
     return () => (isCancelled = true);
   }, []);
 
-  const newState = countries.filter(
-    (item) =>
-      item.nameEn
-        .toLowerCase()
-        .includes(props.searchQuery.searchQuery.toLowerCase()) ||
-      item.capitalEn
-        .toLowerCase()
-        .includes(props.searchQuery.searchQuery.toLowerCase())
-  );
+  // const newState = countries.filter(
+  //   (item) =>
+  //     item.nameEn
+  //       .toLowerCase()
+  //       .includes(props.searchQuery.searchQuery.toLowerCase()) ||
+  //     item.capitalEn
+  //       .toLowerCase()
+  //       .includes(props.searchQuery.searchQuery.toLowerCase())
+  // );
 
   // console.log(newState);
 
@@ -46,7 +46,7 @@ const Countries = (props) => {
 
   return (
     <div className="countries">
-      {newState.map((item, index) => (
+      {countries.map((item, index) => (
         <Link key={index} to={`/${item.nameEn.toLowerCase()}`}>
           <div className="country">
             <img

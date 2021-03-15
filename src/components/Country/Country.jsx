@@ -27,8 +27,7 @@ const Country = (props) => {
     getData();
     return () => (isCancelled = true);
   }, [slug]);
-  
-
+  console.log(country)
   if (country === 'Error') {
     return <div>Sorry, something went wrong </div>;
   }
