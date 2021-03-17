@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import './Country.scss';
 import Widgets from './Widgets/Widgets';
+import CountryMap from './CountryMap/CountryMap';
 
 const Country = (props) => {
   const { slug } = props.match.params;
@@ -52,6 +53,12 @@ const Country = (props) => {
             <h3>Currency</h3>
             {country.currencies.name}, {country.currencies.symbol}
           </div>
+          <CountryMap
+            lat={country.coordinates.lat}
+            lon={country.coordinates.lon}
+            capital={country.capital.en}
+          />
+
           <Widgets
             city={country.capital.en}
             currencyCode={country.currencies.code}
