@@ -1,18 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
+import NotFound from '../NotFound/NotFound';
+import { useSelector } from 'react-redux';
 
 const CountryCards = (props) => {
   const { countries } = props;
 
+  const langauge = useSelector((state) => state.lang.lang);
+
   if (countries.length === 0) {
-    return <div>Sorry, nothing here</div>;
+    return <NotFound />;
   }
 
   return (
     <>
       {countries.map((item) => (
-        <Link key={item.capitalEn} to={`/country/${item.nameEn.toLowerCase()}`}>
+        <Link key={item.name.en} to={`/country/${item.name.en.toLowerCase()}`}>
           <div className="country">
             <img
               loading="lazy"
@@ -20,8 +23,22 @@ const CountryCards = (props) => {
               className="countryImage"
               alt="countries"
             />
-            <h1>{item.nameEn}</h1>
-            <h3>{item.capitalEn}</h3>
+            {langauge === 'English' ? (
+              <>
+                <h1>{item.name.en}</h1>
+                <h3>{item.capital.en}</h3>
+              </>
+            ) : langauge === 'Russian' ? (
+              <>
+                <h1>{item.name.ru}</h1>
+                <h3>{item.capital.ru} </h3>
+              </>
+            ) : (
+              <>
+                <h1>{item.name.ua}</h1>
+                <h3>{item.capital.ua} </h3>
+              </>
+            )}
           </div>
         </Link>
       ))}
@@ -29,10 +46,4 @@ const CountryCards = (props) => {
   );
 };
 
-function mapStateToProps(state) {
-  return {
-    searchQuery: state.searchQuery,
-  };
-}
-
-export default connect(mapStateToProps)(CountryCards);
+export default CountryCards;

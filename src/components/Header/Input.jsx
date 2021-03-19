@@ -7,8 +7,19 @@ import ClearIcon from '@material-ui/icons/Clear';
 import { useHistory } from 'react-router-dom';
 import { CountryContext } from '../../context/GlobalContext';
 
+import { useSelector } from 'react-redux';
+
+const getLangauge = (value) => {
+  if (value === 'Russian') return 'Поиск страны';
+  if (value === 'Ukrainian') return 'Пошук країни';
+  else return 'Search country';
+};
+
 const Input = () => {
   const [input, setInput] = useState('');
+
+  const langauge = useSelector((state) => state.lang.lang);
+
 
   const history = useHistory();
 
@@ -31,11 +42,12 @@ const Input = () => {
     setInput('');
   };
 
+
   return (
     <Paper className="inputForm" noValidate autoComplete="off">
       <InputBase
         className="input"
-        placeholder="Search Country"
+        placeholder={getLangauge(langauge)}
         type="text"
         autoFocus={true}
         value={input}

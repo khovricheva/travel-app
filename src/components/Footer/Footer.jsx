@@ -6,28 +6,28 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 const Footer = () => {
   return (
     <footer>
-      <Box align='center' display='flex' justifyContent='space-around'>
+      <Box align="center" display="flex" justifyContent="space-around">
         <Typography>
           <GitHubIcon></GitHubIcon>
-          <Link href='https://github.com/ArtemSirobaba'>@ArtemSirobaba</Link>
+          <Link href="https://github.com/ArtemSirobaba">@ArtemSirobaba</Link>
         </Typography>
-        <Link href='https://rs.school/js/'>
+        <Link href="https://rs.school/js/">
           <img
-            className='school-logo'
-            alt='school-logo'
-            src='https://rs.school/images/rs_school_js.svg'
+            className="school-logo"
+            alt="school-logo"
+            src="https://rs.school/images/rs_school_js.svg"
           />
         </Link>
         <Typography>
           <GitHubIcon></GitHubIcon>
-          <Link href='https://github.com/khovricheva'>@khovricheva</Link>
+          <Link href="https://github.com/khovricheva">@khovricheva</Link>
         </Typography>
       </Box>
       <Typography
-        variant='subtitle1'
-        align='center'
-        color='textSecondary'
-        component='p'
+        variant="subtitle1"
+        align="center"
+        color="textSecondary"
+        component="p"
       >
         {new Date().getFullYear()}
       </Typography>
