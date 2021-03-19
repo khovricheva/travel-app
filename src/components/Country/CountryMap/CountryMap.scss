@@ -1,9 +1,10 @@
 .countryMap {
   width: 80%;
-  height: 700px;
-
-  border: 5px solid red;
 }
 .mapContainer {
   height: 700px;
+}
+.leaflet-touch .leaflet-control-layers,
+.leaflet-touch .leaflet-bar {
+  border: none;
 }

@@ -57,6 +57,7 @@ const Country = (props) => {
             lat={country.coordinates.lat}
             lon={country.coordinates.lon}
             capital={country.capital.en}
+            geoCoordinates={country.geoCoordinates}
           />
 
           <Widgets
