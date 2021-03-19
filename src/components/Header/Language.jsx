@@ -7,7 +7,6 @@ import { connect } from 'react-redux';
 const Language = (props) => {
   
   const handleLanguage = (event) => {
-    localStorage.setItem('lang', event.target.value)
     props.dispatch({ type: event.target.value.toUpperCase() });
   };
 

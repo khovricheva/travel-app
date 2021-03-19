@@ -1,8 +1,5 @@
 const initialLangState = {
-  lang:
-    localStorage.getItem('lang') === undefined
-      ? 'English'
-      : localStorage.getItem('lang'),
+  lang: 'English',
 };
 
 export const langReducer = (state = initialLangState, action) => {
