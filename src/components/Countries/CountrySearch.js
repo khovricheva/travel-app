@@ -5,33 +5,33 @@ import CountryCards from './CountryCards';
 import { useSelector } from 'react-redux';
 
 const countryFilter = (lang, countries, name) => {
-  // if (lang === 'English')
-  //   return countries.filter(
-  //     (item) =>
-  //       item.name.en.toLowerCase().includes(name) ||
-  //       item.capital.en.toLowerCase().includes(name)
-  //   );
-  // if (lang === 'Russian')
-  //   return countries.filter(
-  //     (item) =>
-  //       item.name.ru.toLowerCase().includes(name) ||
-  //       item.capital.ru.toLowerCase().includes(name)
-  //   );
-  // if (lang === 'Ukrainian')
-  //   return countries.filter(
-  //     (item) =>
-  //       item.name.ua.toLowerCase().includes(name) ||
-  //       item.capital.ua.toLowerCase().includes(name)
-  //   );
-  return countries.filter(
-    (item) =>
-      item.name.en.toLowerCase().includes(name) ||
-      item.capital.en.toLowerCase().includes(name) ||
-      item.name.ru.toLowerCase().includes(name) ||
-      item.capital.ru.toLowerCase().includes(name) ||
-      item.name.ua.toLowerCase().includes(name) ||
-      item.capital.ua.toLowerCase().includes(name)
-  );
+  if (lang === 'English')
+    return countries.filter(
+      (item) =>
+        item.name.en.toLowerCase().includes(name) ||
+        item.capital.en.toLowerCase().includes(name)
+    );
+  if (lang === 'Russian')
+    return countries.filter(
+      (item) =>
+        item.name.ru.toLowerCase().includes(name) ||
+        item.capital.ru.toLowerCase().includes(name)
+    );
+  if (lang === 'Ukrainian')
+    return countries.filter(
+      (item) =>
+        item.name.ua.toLowerCase().includes(name) ||
+        item.capital.ua.toLowerCase().includes(name)
+    );
+  // return countries.filter(
+  //   (item) =>
+  //     item.name.en.toLowerCase().includes(name) ||
+  //     item.capital.en.toLowerCase().includes(name) ||
+  //     item.name.ru.toLowerCase().includes(name) ||
+  //     item.capital.ru.toLowerCase().includes(name) ||
+  //     item.name.ua.toLowerCase().includes(name) ||
+  //     item.capital.ua.toLowerCase().includes(name)
+  // );
 };
 
 const CountrySearch = () => {

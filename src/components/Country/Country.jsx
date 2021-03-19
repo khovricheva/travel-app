@@ -26,7 +26,7 @@ const Country = (props) => {
     getData();
     return () => (isCancelled = true);
   }, [slug]);
-
+  
   if (country === 'Error') {
     return <div>Sorry, something went wrong </div>;
   }
@@ -59,7 +59,6 @@ const Country = (props) => {
             capital={country.capital.en}
             geoCoordinates={country.geoCoordinates}
           />
-
           <Widgets
             city={country.capital.en}
             currencyCode={country.currencies.code}

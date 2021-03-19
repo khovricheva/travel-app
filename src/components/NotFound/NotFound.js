@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 const NotFound = () => {
+  
   const langauge = useSelector((state) => state.lang.lang);
 
   return (

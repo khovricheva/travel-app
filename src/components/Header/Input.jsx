@@ -40,8 +40,7 @@ const Input = () => {
   const clearInput = () => {
     setInput('');
   };
-
-
+  
   return (
     <Paper className="inputForm" noValidate autoComplete="off">
       <InputBase
