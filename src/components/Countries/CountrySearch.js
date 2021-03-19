@@ -7,13 +7,12 @@ const CountrySearch = () => {
   const countries = useContext(CountryContext);
   const location = useLocation();
 
-
   const name = location.pathname.slice(13).toLowerCase();
 
   const countryFilter = countries.filter(
     (item) =>
-      item.nameEn.toLowerCase().includes(name) ||
-      item.capitalEn.toLowerCase().includes(name)
+      item.name.en.toLowerCase().includes(name) ||
+      item.capital.en.toLowerCase().includes(name)
   );
 
 
