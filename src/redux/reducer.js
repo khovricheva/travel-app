@@ -1,42 +1,26 @@
 const initialLangState = {
-  lang:
-    localStorage.getItem('lang') === null
-      ? 'English'
-      : localStorage.getItem('lang'),
+  langauge: 'English',
+  code: 'en',
 };
 
 export const langReducer = (state = initialLangState, action) => {
   switch (action.type) {
     case 'ENGLISH': {
       return {
-        lang: 'English',
+        langauge: 'English',
+        code: 'en',
       };
     }
     case 'RUSSIAN': {
       return {
-        lang: 'Russian',
+        langauge: 'Russian',
+        code: 'ru',
       };
     }
     case 'UKRAINIAN': {
       return {
-        lang: 'Ukrainian',
-      };
-    }
-    default:
-      return state;
-  }
-};
-
-const initialInputState = {
-  searchQuery: '',
-};
-
-export const searchQueryReducer = (state = initialInputState, action) => {
-  switch (action.type) {
-    case 'SEARCH_QUERY': {
-      return {
-        // ...state,
-        searchQuery: action.value,
+        langauge: 'Ukrainian',
+        code: 'ua',
       };
     }
     default:

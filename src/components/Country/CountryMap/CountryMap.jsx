@@ -16,11 +16,11 @@ function CountryMap({ lat, lon, capital, geoCoordinates }) {
     } else {
       setPolygon(geoCoordinates.map((row) => [row[1], row[0]]));
     }
-  }, []);
+  }, [geoCoordinates]); // чтобы хук не ругался
 
   return (
-    <div className='countryMap' id='mapid'>
-      <Button variant='contained' color='primary' onClick={handle.enter}>
+    <div className="countryMap" id="mapid">
+      <Button variant="contained" color="primary" onClick={handle.enter}>
         Fullscreen map
       </Button>
       <FullScreen handle={handle}>
@@ -28,7 +28,7 @@ function CountryMap({ lat, lon, capital, geoCoordinates }) {
           center={[lat, lon]}
           zoom={5}
           scrollWheelZoom={false}
-          className='mapContainer'
+          className="mapContainer"
         >
           <TileLayer
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -41,8 +41,8 @@ function CountryMap({ lat, lon, capital, geoCoordinates }) {
             stroke={false}
             fillColor={'lime'}
             weight={2}
-            lineCap='round'
-            lineJoin='round'
+            lineCap="round"
+            lineJoin="round"
           />
 
           <Marker position={[lat, lon]}>

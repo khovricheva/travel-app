@@ -6,11 +6,7 @@ import CountryCards from './CountryCards';
 const Countries = () => {
   const countries = useContext(CountryContext);
 
-  return (
-    <div className="countries">
-      <CountryCards countries={countries} />
-    </div>
-  );
+  return <CountryCards countries={countries} />;
 };
 
 export default Countries;

@@ -1,31 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import translate from '../../translate';
 
 const NotFound = () => {
-  
-  const langauge = useSelector((state) => state.lang.lang);
+  const code = useSelector((state) => state.code);
 
   return (
     <div>
-      {langauge === 'English' ? (
-        <h1>Go home</h1>
-      ) : langauge === 'Russian' ? (
-        <h1>На главную страницу</h1>
-      ) : (
-        <h1>На головну сторінку</h1>
-      )}
+      <h1>{translate.notfound[code]}</h1>
+
       <Link to="/">
-        <input
-          type="submit"
-          value={
-            langauge === 'English'
-              ? 'Home'
-              : langauge === 'Russian'
-              ? 'Главная'
-              : 'Головна'
-          }
-        />
+        <input type="submit" value={translate.notfound.button[code]} />
       </Link>
     </div>
   );

@@ -1,48 +1,68 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import NotFound from '../NotFound/NotFound';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
 import { useSelector } from 'react-redux';
+import NotFound from '../NotFound/NotFound';
+import { Link } from 'react-router-dom';
+import {
+  FiCard,
+  FiCardActions,
+  FiCardContent,
+  FiCardMedia,
+} from './FullImageCard';
+import { Button } from '@material-ui/core';
+import translate from '../../translate';
 
 const CountryCards = (props) => {
   const { countries } = props;
+  const code = useSelector((state) => state.code);
 
-  const langauge = useSelector((state) => state.lang.lang);
-
-  if (countries.length === 0) {
+  if (countries === 'NotFound') {
     return <NotFound />;
   }
 
+  if (countries.length === 0) {
+    return <div className="loader">Loading...</div>;
+  }
+
+
   return (
-    <>
+    <div className="countries">
       {countries.map((item) => (
-        <Link key={item.name.en} to={`/country/${item.name.en.toLowerCase()}`}>
-          <div className="country">
-            <img
-              loading="lazy"
-              src={item.introPhoto}
+        <Box key={item.name.en} my={4}>
+          <FiCard className="card">
+            <FiCardMedia
+              media="picture"
               className="countryImage"
-              alt="countries"
+              alt="Country Photo"
+              image={item.introPhoto}
+              title="Country Photo"
             />
-            {langauge === 'English' ? (
-              <>
-                <h1>{item.name.en}</h1>
-                <h3>{item.capital.en}</h3>
-              </>
-            ) : langauge === 'Russian' ? (
-              <>
-                <h1>{item.name.ru}</h1>
-                <h3>{item.capital.ru} </h3>
-              </>
-            ) : (
-              <>
-                <h1>{item.name.ua}</h1>
-                <h3>{item.capital.ua} </h3>
-              </>
-            )}
-          </div>
-        </Link>
+            <FiCardContent>
+              <Typography gutterBottom variant="h5" component="h2">
+                {item.name[code]}
+              </Typography>
+              <Typography variant="body2" component="p">
+                {item.capital[code]}
+              </Typography>
+            </FiCardContent>
+            <FiCardActions>
+              <Button size="small" color="inherit" variant="outlined">
+                {translate.share[code]}
+              </Button>
+              <Link
+                className="link"
+                to={`/country/${item.name.en.toLowerCase()}`}
+              >
+                <Button size="small" color="inherit" variant="outlined">
+                  {translate.learnMore[code]}
+                </Button>
+              </Link>
+            </FiCardActions>
+          </FiCard>
+        </Box>
       ))}
-    </>
+    </div>
   );
 };
 

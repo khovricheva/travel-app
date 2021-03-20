@@ -14,7 +14,10 @@ export const GlobalCountryContext = (props) => {
           `https://travel-api-git-main-imbatman.vercel.app/all.json`
         );
         if (!isCancelled) {
-          setCountries(result.data);
+          let timer = setTimeout(() => {
+            setCountries(result.data);
+            clearTimeout(timer);
+          }, 1200);
         }
       } catch (e) {
         if (!isCancelled) {
@@ -27,7 +30,7 @@ export const GlobalCountryContext = (props) => {
     return () => (isCancelled = true);
   }, []);
 
-  return (
+return (
     <CountryContext.Provider value={countries}>
       {props.children}
     </CountryContext.Provider>

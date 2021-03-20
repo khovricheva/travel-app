@@ -1,9 +1,4 @@
-import { createStore, combineReducers } from 'redux';
-import { langReducer, searchQueryReducer } from './reducer.js';
+import { createStore } from 'redux';
+import { langReducer } from './reducer.js';
 
-const allReducers = combineReducers({
-  lang: langReducer,
-  searchQuery: searchQueryReducer,
-});
-
-export default createStore(allReducers);
+export default createStore(langReducer);

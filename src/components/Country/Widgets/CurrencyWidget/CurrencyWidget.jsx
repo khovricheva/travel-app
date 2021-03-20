@@ -22,7 +22,7 @@ const CurrencyWidget = ({ currencyCode, countryCode }) => {
     };
     getData();
     return () => (isCancelled = true);
-  }, [currency]);
+  }, [currency, currencyCode]); // чтобы хук не ругался
 
   return (
     <div className='currencyWidget'>

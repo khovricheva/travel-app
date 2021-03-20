@@ -7,13 +7,12 @@ import { connect } from 'react-redux';
 const Language = (props) => {
   
   const handleLanguage = (event) => {
-    localStorage.setItem('lang', event.target.value)
     props.dispatch({ type: event.target.value.toUpperCase() });
   };
 
   return (
     <FormControl variant="outlined" className='selectForm'>
-      <Select value={props.chosenLanguage.lang} onChange={handleLanguage}>
+      <Select value={props.langauge} onChange={handleLanguage}>
         <MenuItem value={'English'}>English</MenuItem>
         <MenuItem value={'Russian'}>Russian</MenuItem>
         <MenuItem value={'Ukrainian'}>Ukrainian</MenuItem>
@@ -25,7 +24,7 @@ const Language = (props) => {
 
 function mapStateToProps(state) {
   return {
-    chosenLanguage: state.lang,
+    langauge: state.langauge,
   };
 }
 
