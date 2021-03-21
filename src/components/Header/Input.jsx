@@ -11,7 +11,7 @@ import translate from '../../translate'
 
 const Input = () => {
   const [input, setInput] = useState('');
-  const langauge = useSelector((state) => state.code);
+  const code = useSelector((state) => state.code);
   const history = useHistory();
 
   const handleEnter = (e) => {
@@ -35,7 +35,7 @@ const Input = () => {
     <Paper className="inputForm" noValidate autoComplete="off">
       <InputBase
         className="input"
-        placeholder={translate.input[langauge]}
+        placeholder={translate.input[code]}
         type="text"
         value={input}
         onChange={(e) => handleChangeInput(e)}
