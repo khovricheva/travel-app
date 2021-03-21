@@ -1,8 +1,13 @@
 const translate = {
-  share: {
+  copy: {
     en: 'Copy',
     ru: 'Копировать',
     ua: 'Копіювати',
+    copied: {
+      en: 'Copied!',
+      ru: 'Скопировано!',
+      ua: 'Скопійовано',
+    }
   },
   learnMore: {
     en: 'Learn More',

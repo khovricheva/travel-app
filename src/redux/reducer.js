@@ -1,23 +1,25 @@
-const initialLangState = {
+import { ENGLISH, RUSSIAN, UKRAINIAN } from './actions';
+
+const langaugeState = {
   langauge: 'English',
   code: 'en',
 };
 
-export const langReducer = (state = initialLangState, action) => {
+const langReducer = (state = langaugeState, action) => {
   switch (action.type) {
-    case 'ENGLISH': {
+    case ENGLISH: {
       return {
         langauge: 'English',
         code: 'en',
       };
     }
-    case 'RUSSIAN': {
+    case RUSSIAN: {
       return {
         langauge: 'Russian',
         code: 'ru',
       };
     }
-    case 'UKRAINIAN': {
+    case UKRAINIAN: {
       return {
         langauge: 'Ukrainian',
         code: 'ua',
@@ -27,3 +29,5 @@ export const langReducer = (state = initialLangState, action) => {
       return state;
   }
 };
+
+export default langReducer;

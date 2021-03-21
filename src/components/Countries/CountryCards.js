@@ -12,6 +12,7 @@ import {
 } from './FullImageCard';
 import { Button } from '@material-ui/core';
 import translate from '../../translate';
+import Copy from './Copy';
 
 const CountryCards = (props) => {
   const { countries } = props;
@@ -28,39 +29,40 @@ const CountryCards = (props) => {
   return (
     <div className="countries">
       {countries.map((item) => (
-          <Box key={item.name.en} my={4} className='cardContainer'>
-            <FiCard className="card">
-              <FiCardMedia
-                media="picture"
-                className="countryImage"
-                alt="Country Photo"
-                image={item.introPhoto}
-                title="Country Photo"
+        <Box key={item.name.en} my={4} className="cardContainer">
+          <FiCard className="card">
+            <FiCardMedia
+              media="picture"
+              className="countryImage"
+              alt="Country Photo"
+              image={item.introPhoto}
+              title="Country Photo"
+            />
+            <FiCardContent>
+              <Typography gutterBottom variant="h5" component="h2">
+                {item.name[code]}
+              </Typography>
+              <Typography variant="body2" component="p">
+                {item.capital[code]}
+              </Typography>
+            </FiCardContent>
+            <FiCardActions>
+              <Copy
+                copy={translate.copy}
+                code={code}
+                link={`/country/${item.name.en.toLowerCase()}`}
               />
-              <FiCardContent>
-                <Typography gutterBottom variant="h5" component="h2">
-                  {item.name[code]}
-                </Typography>
-                <Typography variant="body2" component="p">
-                  {item.capital[code]}
-                </Typography>
-              </FiCardContent>
-              <FiCardActions>
+              <Link
+                className="link"
+                to={`/country/${item.name.en.toLowerCase()}`}
+              >
                 <Button size="small" color="inherit" variant="outlined">
-                  {translate.share[code]}
+                  {translate.learnMore[code]}
                 </Button>
-                <Link
-                  className="link"
-                  to={`/country/${item.name.en.toLowerCase()}`}
-                >
-                  <Button size="small" color="inherit" variant="outlined">
-                    {translate.learnMore[code]}
-                  </Button>
-                </Link>
-              </FiCardActions>
-            </FiCard>
-          </Box>
-
+              </Link>
+            </FiCardActions>
+          </FiCard>
+        </Box>
       ))}
     </div>
   );
