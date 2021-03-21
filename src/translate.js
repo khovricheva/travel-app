@@ -1,8 +1,8 @@
 const translate = {
   share: {
-    en: 'Share',
-    ru: 'Поделиться',
-    ua: 'Поділитися',
+    en: 'Copy',
+    ru: 'Копировать',
+    ua: 'Копіювати',
   },
   learnMore: {
     en: 'Learn More',

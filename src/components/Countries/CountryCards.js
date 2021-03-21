@@ -25,42 +25,42 @@ const CountryCards = (props) => {
     return <div className="loader">Loading...</div>;
   }
 
-
   return (
     <div className="countries">
       {countries.map((item) => (
-        <Box key={item.name.en} my={4}>
-          <FiCard className="card">
-            <FiCardMedia
-              media="picture"
-              className="countryImage"
-              alt="Country Photo"
-              image={item.introPhoto}
-              title="Country Photo"
-            />
-            <FiCardContent>
-              <Typography gutterBottom variant="h5" component="h2">
-                {item.name[code]}
-              </Typography>
-              <Typography variant="body2" component="p">
-                {item.capital[code]}
-              </Typography>
-            </FiCardContent>
-            <FiCardActions>
-              <Button size="small" color="inherit" variant="outlined">
-                {translate.share[code]}
-              </Button>
-              <Link
-                className="link"
-                to={`/country/${item.name.en.toLowerCase()}`}
-              >
+          <Box key={item.name.en} my={4} className='cardContainer'>
+            <FiCard className="card">
+              <FiCardMedia
+                media="picture"
+                className="countryImage"
+                alt="Country Photo"
+                image={item.introPhoto}
+                title="Country Photo"
+              />
+              <FiCardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                  {item.name[code]}
+                </Typography>
+                <Typography variant="body2" component="p">
+                  {item.capital[code]}
+                </Typography>
+              </FiCardContent>
+              <FiCardActions>
                 <Button size="small" color="inherit" variant="outlined">
-                  {translate.learnMore[code]}
+                  {translate.share[code]}
                 </Button>
-              </Link>
-            </FiCardActions>
-          </FiCard>
-        </Box>
+                <Link
+                  className="link"
+                  to={`/country/${item.name.en.toLowerCase()}`}
+                >
+                  <Button size="small" color="inherit" variant="outlined">
+                    {translate.learnMore[code]}
+                  </Button>
+                </Link>
+              </FiCardActions>
+            </FiCard>
+          </Box>
+
       ))}
     </div>
   );
