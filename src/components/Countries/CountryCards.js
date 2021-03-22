@@ -12,7 +12,7 @@ import {
 } from './FullImageCard';
 import { Button } from '@material-ui/core';
 import translate from '../../translate';
-import Copy from './Copy';
+import Spinner from '../Spinner/Spinner';
 
 const CountryCards = (props) => {
   const { countries } = props;
@@ -23,7 +23,7 @@ const CountryCards = (props) => {
   }
 
   if (countries.length === 0) {
-    return <div className="loader">Loading...</div>;
+    return <Spinner />;
   }
 
   return (
@@ -47,11 +47,6 @@ const CountryCards = (props) => {
               </Typography>
             </FiCardContent>
             <FiCardActions>
-              <Copy
-                copy={translate.copy}
-                code={code}
-                link={`/country/${item.name.en.toLowerCase()}`}
-              />
               <Link
                 className="link"
                 to={`/country/${item.name.en.toLowerCase()}`}

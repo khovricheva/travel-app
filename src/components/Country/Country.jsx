@@ -5,6 +5,7 @@ import Widgets from './Widgets/Widgets';
 import CountryMap from './CountryMap/CountryMap';
 import translate from '../../translate';
 import { useSelector } from 'react-redux';
+import Spinner from '../Spinner/Spinner';
 
 const Country = (props) => {
   const { slug } = props.match.params;
@@ -39,11 +40,7 @@ const Country = (props) => {
     return <div>Sorry, something went wrong </div>;
   }
   if (country.length === 0) {
-    return (
-      <div class="wrapper">
-        <div class="cssload-loader"></div>
-      </div>
-    );
+    return <Spinner />;
   }
 
   return (
