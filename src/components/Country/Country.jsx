@@ -6,6 +6,7 @@ import CountryMap from './CountryMap/CountryMap';
 import translate from '../../translate';
 import { useSelector } from 'react-redux';
 import Spinner from '../Spinner/Spinner';
+import Attractions from './Attractions/Attractions';
 
 const Country = (props) => {
   const { slug } = props.match.params;
@@ -46,9 +47,13 @@ const Country = (props) => {
   return (
     <>
       {Object.keys(country).length !== 0 && (
-        <div className="country">
-          {/* <img src={country.img} alt='country' className='countryImage' /> */}
-          <h2 className="countryName">{country.name[code]}</h2>
+        <div className='country'>
+          <img
+            src={country.introPhoto}
+            alt='countryImage'
+            className='countryImage'
+          />
+          <h2 className='countryName'>{country.name[code]}</h2>
           <div>
             <h3>{translate.capital[code]}</h3>
             {country.capital[code]}
@@ -70,6 +75,11 @@ const Country = (props) => {
             lon={country.coordinates.lon}
             capital={country.capital.en}
             geoCoordinates={country.geoCoordinates}
+          />
+          <Attractions
+            city={country.capital.en}
+            lat={country.coordinates.lat}
+            lon={country.coordinates.lon}
           />
           <Widgets
             city={country.capital.en}
