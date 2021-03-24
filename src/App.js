@@ -17,9 +17,9 @@ const App = () => {
         <Header />
         <Suspense fallback={<Spinner />}>
           <Switch>
-            <Route path="/" exact component={Countries} />
-            <Route path="/search/text=:slug" component={CountrySearch} />
-            <Route path="/country/:slug" component={Country} />
+            <Route path='/' exact component={Countries} />
+            <Route path='/search/text=:slug' component={CountrySearch} />
+            <Route path='/country/:slug' component={Country} />
             <Route component={NotFound} />
           </Switch>
         </Suspense>

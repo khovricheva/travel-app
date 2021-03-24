@@ -7,7 +7,7 @@ import './Widgets.scss';
 const Widgets = (props) => {
   return (
     <div className='widgets'>
-      <TimeWidget city={props.city} lat={props.lat} lon={props.lon} />
+      {/* <TimeWidget city={props.city} lat={props.lat} lon={props.lon} /> */}
       <WeatherWidget city={props.city} />
       <CurrencyWidget
         currencyCode={props.currencyCode}
