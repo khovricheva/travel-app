@@ -3,15 +3,17 @@
   grid-template-columns: 1fr;
   padding-right: 5px;
   padding-left: 5px;
-  
+
   .cardContainer {
     display: flex;
     justify-content: center;
     margin-bottom: 10px;
-    
+
     .card {
-      width: 345px;
-      height: 200px;
+      width: 90%;
+      height: auto;
+      max-width: 35rem;
+      min-height: 12rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -45,24 +47,52 @@
   }
 }
 
+@media screen and (min-width: 500px) {
+  .countries {
+    display: grid;
+    grid-template-columns: 1fr;
+    .cardContainer {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+      .card {
+        width: 90%;
+        height: auto;
+        max-width: 40rem;
+        min-height: 18rem;
+      }
+    }
+  }
+}
+
 @media screen and (min-width: 768px) {
   .countries {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    .cardContainer {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+      .card {
+        width: 90%;
+        height: auto;
+        max-width: 30rem;
+        min-height: 15rem;
+      }
+    }
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1100px) {
   .countries {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1800px) {
   .countries {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
-
