@@ -4,15 +4,12 @@ import TimeWidget from './TimeWidget/TimeWidget';
 import CurrencyWidget from './CurrencyWidget/CurrencyWidget';
 import './Widgets.scss';
 
-const Widgets = (props) => {
+const Widgets = ({ city, timezone, currencyCode, countryCode }) => {
   return (
     <div className='widgets'>
-      {/* <TimeWidget city={props.city} lat={props.lat} lon={props.lon} /> */}
-      <WeatherWidget city={props.city} />
-      <CurrencyWidget
-        currencyCode={props.currencyCode}
-        countryCode={props.countryCode}
-      />
+      <TimeWidget city={city} timezone={timezone} />
+      <WeatherWidget city={city} />
+      <CurrencyWidget currencyCode={currencyCode} countryCode={countryCode} />
     </div>
   );
 };

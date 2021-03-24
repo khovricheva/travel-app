@@ -85,8 +85,7 @@ const Country = (props) => {
             city={country.capital.en}
             currencyCode={country.currencies.code}
             countryCode={country.alpha2Code}
-            lat={country.coordinates.lat}
-            lon={country.coordinates.lon}
+            timezone={country.timezones}
           />
         </div>
       )}
