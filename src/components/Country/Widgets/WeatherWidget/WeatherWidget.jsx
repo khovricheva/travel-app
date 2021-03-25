@@ -45,20 +45,17 @@ const WeatherWidget = ({ cityObj }) => {
             className='weather-icon'
             src={`http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`}
             alt='weather-img'
+            title={`${weatherData.weather[0].description}`}
           />
           <div className='temperature'>
             {weatherData.main.temp.toFixed(0)}°C
           </div>
           <div className='humidity'>
-            {translate.weatherInfo.humidity[code]}: {weatherData.main.humidity}{' '}
-            %
+            {translate.weatherInfo.humidity[code]}: {weatherData.main.humidity}%
           </div>
           <div className='wind'>
-            {translate.weatherInfo.wind[code]}: {weatherData.wind.speed}{' '}
+            {translate.weatherInfo.wind[code]}: {weatherData.wind.speed}
             {translate.weatherInfo.units[code]}
-          </div>
-          <div className='weather-description'>
-            {weatherData.weather[0].description}
           </div>
         </div>
       )}
