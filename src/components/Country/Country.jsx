@@ -77,9 +77,8 @@ const Country = (props) => {
             geoCoordinates={country.geoCoordinates}
           />
           <Attractions
-            city={country.capital.en}
-            lat={country.coordinates.lat}
-            lon={country.coordinates.lon}
+            countryName={country.name[code]}
+            attractions={country.attractions}
           />
           <Widgets
             city={country.capital.en}

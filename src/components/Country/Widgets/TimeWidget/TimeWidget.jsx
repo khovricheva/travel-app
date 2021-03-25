@@ -4,15 +4,7 @@ const TimeWidget = ({ city, timezone }) => {
   const [time, setTime] = useState('');
   const [fullDate, setFullDate] = useState('');
 
-  const utc = Number(timezone[0].substring(3, 3));
-
-  const dateOptions = {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  };
-  const dateFormatter = new Intl.DateTimeFormat('en-US', dateOptions);
+  const utc = Number(timezone[0].substring(3, 6));
 
   const getTime = (utc) => {
     const differenceTime = new Date().getTimezoneOffset() / 60 + utc;
@@ -30,6 +22,13 @@ const TimeWidget = ({ city, timezone }) => {
   }, [utc]);
 
   useEffect(() => {
+    const dateOptions = {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    };
+    const dateFormatter = new Intl.DateTimeFormat('en-US', dateOptions);
     const date = dateFormatter.format(getTime(utc));
     setFullDate(date);
   }, [utc]);
