@@ -4,7 +4,7 @@ import YouTube from 'react-youtube';
 function Video({ videoId }) {
   return (
     <div>
-      <YouTube videoId={videoId} />;
+      <YouTube videoId={videoId} />
     </div>
   );
 }
