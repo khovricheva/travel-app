@@ -40,13 +40,12 @@ const Country = (props) => {
   if (country === 'Error') {
     return <div>Sorry, something went wrong </div>;
   }
-  if (country.length === 0) {
-    return <Spinner />;
-  }
 
   return (
     <>
-      {Object.keys(country).length !== 0 && (
+      {country.length === 0 ? (
+        <Spinner />
+      ) : (
         <div className='country'>
           <img
             src={country.introPhoto}
@@ -81,6 +80,7 @@ const Country = (props) => {
             attractions={country.attractions}
           />
           <Widgets
+            cityObj={country.capital}
             city={country.capital[code]}
             currencyCode={country.currencies.code}
             countryCode={country.alpha2Code}
