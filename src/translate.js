@@ -6,8 +6,8 @@ const translate = {
     copied: {
       en: 'Copied!',
       ru: 'Скопировано!',
-      ua: 'Скопійовано',
-    }
+      ua: 'Скопійовано!',
+    },
   },
   learnMore: {
     en: 'Learn More',
@@ -31,8 +31,8 @@ const translate = {
   },
   population: {
     en: 'Population',
-    ru: 'Популяция',
-    ua: 'Популяція',
+    ru: 'Население',
+    ua: 'Населення',
   },
   currency: {
     en: 'Currency',
@@ -41,13 +41,48 @@ const translate = {
   },
   notfound: {
     en: 'Nothing here, Go home',
-    ru: 'Ничего не найдено, на главную страницу',
-    ua: 'Нічого не знайдено, ідіть звідси на головну сторінку',
+    ru: 'Ничего не найдено, перейти на главную страницу',
+    ua: 'Нічого не знайдено, перейти на головну сторінку',
     button: {
       en: 'Home',
-      ru: 'Главная',
-      ua: 'Головна',
+      ru: 'На главную',
+      ua: 'На головну',
     },
+  },
+  wrong: {
+    en: 'Sorry, something went wrong. Go home',
+    ru: 'Извините, что-то пошло не так. Перейти на главную страницу',
+    ua: 'Вибачте, щось пішло не так. Перейти на головну сторінку',
+    button: {
+      en: 'Home',
+      ru: 'На главную',
+      ua: 'На головну',
+    },
+  },
+  headingTimeWidget: {
+    en: 'Local time in',
+    ru: 'Местное время в городе',
+    ua: 'Місцевий час у місті',
+  },
+  headingWeatherWidget: {
+    en: 'Weather in',
+    ru: 'Погода в городе',
+    ua: 'Погода у місті',
+  },
+  weatherInfo: {
+    wind: { en: 'Wind', ru: 'Ветер', ua: 'Вітер' },
+    humidity: { en: 'Humidity', ru: 'Влажность', ua: 'Вологість' },
+    units: { en: 'm/s', ru: 'м/с', ua: 'м/с' },
+  },
+  headingCurrencyWidget: {
+    en: 'Exchange rate',
+    ru: 'Курс валют',
+    ua: 'Курс валют',
+  },
+  headingAttractions: {
+    en: 'Top-5 plases to visit',
+    ru: 'Топ-5 мест к посещению',
+    ua: 'Топ-5 місць до відвідування',
   },
 };
 
