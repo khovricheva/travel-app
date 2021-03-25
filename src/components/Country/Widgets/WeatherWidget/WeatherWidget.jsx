@@ -32,13 +32,11 @@ const WeatherWidget = ({ cityObj }) => {
     return () => (isCancelled = true);
   }, [cityObj, code]);
 
-  if (weatherData.weather === undefined) {
-    return <Spinner />;
-  }
-
   return (
     <>
-      {
+      {weatherData.weather === undefined ? (
+        <Spinner />
+      ) : (
         <div className='weatherWidget'>
           <h4>
             {translate.headingWeatherWidget[code]} {cityObj[code]}
@@ -63,7 +61,7 @@ const WeatherWidget = ({ cityObj }) => {
             {weatherData.weather[0].description}
           </div>
         </div>
-      }
+      )}
     </>
   );
 };

@@ -30,7 +30,6 @@ const TimeWidget = ({ city, timezone }) => {
       month: 'long',
       day: 'numeric',
     });
-
     setFullDate(date);
   }, [utc, code]);
 

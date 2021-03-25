@@ -15,7 +15,6 @@ const CurrencyWidget = ({ currencyCode, countryCode }) => {
         const result = await axios.get(
           `https://api.exchangeratesapi.io/latest?base=EUR`
         );
-
         if (!isCancelled) setCurrency(result.data.rates[currencyCode]);
       } catch (e) {
         if (!isCancelled) {
