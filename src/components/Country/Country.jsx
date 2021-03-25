@@ -8,6 +8,7 @@ import Spinner from '../Spinner/Spinner';
 import Attractions from './Attractions/Attractions';
 import MainInfo from './MainInfo/MainInfo';
 import Wrong from '../Wrong/Wrong';
+import Video from './Video/Video';
 
 const Country = (props) => {
   const { slug } = props.match.params;
@@ -54,6 +55,7 @@ const Country = (props) => {
             population={country.population}
             currencies={country.currencies}
           />
+          <Video videoId={country.videoId} />
           <CountryMap
             lat={country.coordinates.lat}
             lon={country.coordinates.lon}
