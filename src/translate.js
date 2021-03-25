@@ -7,7 +7,7 @@ const translate = {
       en: 'Copied!',
       ru: 'Скопировано!',
       ua: 'Скопійовано',
-    }
+    },
   },
   learnMore: {
     en: 'Learn More',
@@ -48,6 +48,16 @@ const translate = {
       ru: 'Главная',
       ua: 'Головна',
     },
+  },
+  headingTimeWidget: {
+    en: 'Local time in',
+    ru: 'Местное время в городе',
+    ua: 'Місцевий час у місті',
+  },
+  headingAttractions: {
+    en: 'Top-5 plases to visit',
+    ru: 'Топ-5 мест к посещению',
+    ua: 'Топ-5 місць до відвідування',
   },
 };
 

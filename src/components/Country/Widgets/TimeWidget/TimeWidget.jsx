@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import translate from '../../../../translate';
 
 const TimeWidget = ({ city, timezone }) => {
+  const code = useSelector((state) => state.code);
   const [time, setTime] = useState('');
   const [fullDate, setFullDate] = useState('');
 
@@ -22,20 +25,20 @@ const TimeWidget = ({ city, timezone }) => {
   }, [utc]);
 
   useEffect(() => {
-    const dateOptions = {
-      weekday: 'long',
+    const date = getTime(utc).toLocaleString(code === 'ua' ? 'uk' : code, {
       year: 'numeric',
       month: 'long',
       day: 'numeric',
-    };
-    const dateFormatter = new Intl.DateTimeFormat('en-US', dateOptions);
-    const date = dateFormatter.format(getTime(utc));
+    });
+
     setFullDate(date);
-  }, [utc]);
+  }, [utc, code]);
 
   return (
     <div className='timeWidget'>
-      <h4>Local time in {city}</h4>
+      <h4>
+        {translate.headingTimeWidget[code]} {city}
+      </h4>
       <div>{time}</div>
       <div>{fullDate}</div>
     </div>

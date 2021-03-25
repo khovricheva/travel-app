@@ -1,20 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import ImageGallery from 'react-image-gallery';
+import translate from '../../../translate';
 import './Attractions.scss';
 
-function Attractions({ countryName, attractions }) {
+function Attractions({ attractions }) {
   const code = useSelector((state) => state.code);
-
-  const heading =
-    code === 'en'
-      ? 'Top-5 plases to visit'
-      : code === 'ru'
-      ? 'Топ-5 мест к посещению'
-      : code === 'ua'
-      ? 'Топ-5 місць до відвідування'
-      : '';
-
   const [images, setImages] = useState([]);
 
   useEffect(() => {
@@ -34,7 +25,7 @@ function Attractions({ countryName, attractions }) {
 
   return (
     <div>
-      <h3>{heading}</h3>
+      <h3>{translate.headingAttractions[code]}</h3>
       <ImageGallery items={images} lazyLoad={true} />
     </div>
   );
