@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux';
 import Spinner from '../Spinner/Spinner';
 import Attractions from './Attractions/Attractions';
 import MainInfo from './MainInfo/MainInfo';
+import Wrong from '../Wrong/Wrong';
 
 const Country = (props) => {
   const { slug } = props.match.params;
@@ -42,7 +43,7 @@ const Country = (props) => {
       {country.length === 0 ? (
         <Spinner />
       ) : country === 'Error' ? (
-        <div>Sorry, something went wrong </div>
+        <Wrong />
       ) : (
         <div className='country'>
           <MainInfo

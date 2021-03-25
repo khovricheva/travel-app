@@ -49,6 +49,16 @@ const translate = {
       ua: 'На головну',
     },
   },
+  wrong: {
+    en: 'Sorry, something went wrong. Go home',
+    ru: 'Извините, что-то пошло не так. Перейти на главную страницу',
+    ua: 'Вибачте, щось пішло не так. Перейти на головну сторінку',
+    button: {
+      en: 'Home',
+      ru: 'На главную',
+      ua: 'На головну',
+    },
+  },
   headingTimeWidget: {
     en: 'Local time in',
     ru: 'Местное время в городе',
