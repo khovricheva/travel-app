@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import translate from '../../../../translate';
+import './TimeWidget.scss';
 
 const TimeWidget = ({ city, timezone }) => {
   const code = useSelector((state) => state.code);

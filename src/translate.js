@@ -1,4 +1,9 @@
 const translate = {
+  title: {
+    en: 'Eurotrip',
+    ru: 'Евротур',
+    ua: 'Євротур',
+  },
   copy: {
     en: 'Copy',
     ru: 'Копировать',
@@ -34,10 +39,30 @@ const translate = {
     ru: 'Население',
     ua: 'Населення',
   },
+  populationUnits: {
+    en: 'people',
+    ru: 'чел.',
+    ua: 'люд.',
+  },
   currency: {
     en: 'Currency',
     ru: 'Валюта',
     ua: 'Валюта',
+  },
+  mapHeading: {
+    en: 'on world map',
+    ru: 'на карте мира',
+    ua: 'на карті світу',
+  },
+  mapBtn: {
+    en: 'Fullscreen map',
+    ru: 'Полноэкранная карта',
+    ua: 'Повноекранна мапа',
+  },
+  videoHeading: {
+    en: 'Watch the video about',
+    ru: 'Смотреть видео про',
+    ua: 'Дивитись відео про',
   },
   notfound: {
     en: 'Nothing here, Go home',

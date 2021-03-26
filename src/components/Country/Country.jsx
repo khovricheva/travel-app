@@ -11,6 +11,7 @@ import Attractions from './Attractions/Attractions';
 import MainInfo from './MainInfo/MainInfo';
 import Wrong from '../Wrong/Wrong';
 import Video from './Video/Video';
+import Container from '@material-ui/core/Container';
 
 const Country = (props) => {
   const { slug } = props.match.params;
@@ -55,26 +56,12 @@ const Country = (props) => {
             localStorage.clear();
           }}
         >
-          <div className='country'>
-            <MainInfo
-              introPhoto={country.introPhoto}
-              name={country.name}
-              capital={country.capital}
-              info={country.info}
-              population={country.population}
-              currencies={country.currencies}
-            />
-            <Video videoId={country.videoId} />
-            <CountryMap
-              lat={country.coordinates.lat}
-              lon={country.coordinates.lon}
-              capital={country.capital[code]}
-              geoCoordinates={country.geoCoordinates}
-            />
-            <Attractions
-              countryName={country.name[code]}
-              attractions={country.attractions}
-            />
+          <img
+            src={country.introPhoto}
+            alt='countrImage'
+            className='mainImage'
+          />
+          <Container maxWidth='md' className='country'>
             <Widgets
               cityObj={country.capital}
               city={country.capital[code]}
@@ -82,7 +69,24 @@ const Country = (props) => {
               countryCode={country.alpha2Code}
               timezone={country.timezones}
             />
-          </div>
+
+            <MainInfo
+              countryName={country.name[code]}
+              capital={country.capital[code]}
+              info={country.info[code]}
+              population={country.population}
+              currencies={country.currencies}
+            />
+            <CountryMap
+              lat={country.coordinates.lat}
+              lon={country.coordinates.lon}
+              countryName={country.name[code]}
+              capital={country.capital[code]}
+              geoCoordinates={country.geoCoordinates}
+            />
+            <Video videoId={country.videoId} countryName={country.name[code]} />
+            <Attractions attractions={country.attractions} />
+          </Container>
         </ErrorBoundary>
       )}
     </>

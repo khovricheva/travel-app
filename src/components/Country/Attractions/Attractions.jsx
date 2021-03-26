@@ -24,8 +24,10 @@ function Attractions({ attractions }) {
   }, [attractions, code]);
 
   return (
-    <div>
-      <h3>{translate.headingAttractions[code]}</h3>
+    <div className='attractions'>
+      <h3 className='attractionsHeading'>
+        {translate.headingAttractions[code]}
+      </h3>
       <ImageGallery items={images} lazyLoad={true} />
     </div>
   );
