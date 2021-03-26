@@ -11,7 +11,8 @@
 }
 
 .mapContainer {
-  height: 70vh;
+  min-height: 50vh;
+  height: 100%;
 }
 .leaflet-touch .leaflet-control-layers,
 .leaflet-touch .leaflet-bar {
