@@ -1,9 +1,11 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import axios from 'axios';
+import ErrorFallback from '../ErrorBoundary/ErrorBoundary';
+import { ErrorBoundary } from 'react-error-boundary';
 import './Country.scss';
 import Widgets from './Widgets/Widgets';
 import CountryMap from './CountryMap/CountryMap';
-import { useSelector } from 'react-redux';
 import Spinner from '../Spinner/Spinner';
 import Attractions from './Attractions/Attractions';
 import MainInfo from './MainInfo/MainInfo';
@@ -46,34 +48,42 @@ const Country = (props) => {
       ) : country === 'Error' ? (
         <Wrong />
       ) : (
-        <div className='country'>
-          <MainInfo
-            introPhoto={country.introPhoto}
-            name={country.name}
-            capital={country.capital}
-            info={country.info}
-            population={country.population}
-            currencies={country.currencies}
-          />
-          <Video videoId={country.videoId} />
-          <CountryMap
-            lat={country.coordinates.lat}
-            lon={country.coordinates.lon}
-            capital={country.capital[code]}
-            geoCoordinates={country.geoCoordinates}
-          />
-          <Attractions
-            countryName={country.name[code]}
-            attractions={country.attractions}
-          />
-          <Widgets
-            cityObj={country.capital}
-            city={country.capital[code]}
-            currencyCode={country.currencies.code}
-            countryCode={country.alpha2Code}
-            timezone={country.timezones}
-          />
-        </div>
+        <ErrorBoundary
+          FallbackComponent={ErrorFallback}
+          onReset={() => {
+            window.location.reload();
+            localStorage.clear();
+          }}
+        >
+          <div className='country'>
+            <MainInfo
+              introPhoto={country.introPhoto}
+              name={country.name}
+              capital={country.capital}
+              info={country.info}
+              population={country.population}
+              currencies={country.currencies}
+            />
+            <Video videoId={country.videoId} />
+            <CountryMap
+              lat={country.coordinates.lat}
+              lon={country.coordinates.lon}
+              capital={country.capital[code]}
+              geoCoordinates={country.geoCoordinates}
+            />
+            <Attractions
+              countryName={country.name[code]}
+              attractions={country.attractions}
+            />
+            <Widgets
+              cityObj={country.capital}
+              city={country.capital[code]}
+              currencyCode={country.currencies.code}
+              countryCode={country.alpha2Code}
+              timezone={country.timezones}
+            />
+          </div>
+        </ErrorBoundary>
       )}
     </>
   );
