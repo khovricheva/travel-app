@@ -1,9 +1,9 @@
-.countryImage {
-  width: 100%;
-  object-fit: cover;
-  height: 300px;
-  object-position: 50% 75%;
-}
-.countryName {
-  text-align: center;
+.countryInfo {
+  div {
+    padding-bottom: 10px;
+    text-align: justify;
+  }
+  .countryName {
+    text-align: center;
+  }
 }

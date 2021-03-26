@@ -1,8 +1,17 @@
 .countryMap {
-  width: 80%;
+  width: 100%;
 }
+.heading {
+  display: flex;
+  justify-content: space-between;
+
+  .fullScreenBtn {
+    background-color: #4da8f7;
+  }
+}
+
 .mapContainer {
-  height: 100vh;
+  height: 70vh;
 }
 .leaflet-touch .leaflet-control-layers,
 .leaflet-touch .leaflet-bar {
