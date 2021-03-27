@@ -2,17 +2,19 @@ import React from 'react';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-const Language = (props) => {
+const Language = () => {
+  const dispatch = useDispatch();
+  const langauge = useSelector(state => state.langauge)
 
   const handleLanguage = (event) => {
-    props.dispatch({ type: event.target.value.toUpperCase() });
+    dispatch({ type: event.target.value.toUpperCase() });
   };
 
   return (
     <FormControl variant="outlined" className='selectForm'>
-      <Select value={props.langauge} onChange={handleLanguage}>
+      <Select value={langauge} onChange={handleLanguage}>
         <MenuItem value={'English'}>English</MenuItem>
         <MenuItem value={'Russian'}>Russian</MenuItem>
         <MenuItem value={'Ukrainian'}>Ukrainian</MenuItem>
@@ -22,10 +24,6 @@ const Language = (props) => {
   );
 };
 
-function mapStateToProps(state) {
-  return {
-    langauge: state.langauge,
-  };
-}
 
-export default connect(mapStateToProps)(Language);
+
+export default Language;

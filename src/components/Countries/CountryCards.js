@@ -4,12 +4,10 @@ import Box from '@material-ui/core/Box';
 import { useSelector } from 'react-redux';
 import NotFound from '../NotFound/NotFound';
 import { Link } from 'react-router-dom';
-import {
-  FiCard,
-  FiCardActions,
-  FiCardContent,
-  FiCardMedia,
-} from './FullImageCard';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
 import { Button } from '@material-ui/core';
 import translate from '../../translate';
 import Spinner from '../Spinner/Spinner';
@@ -30,23 +28,25 @@ const CountryCards = (props) => {
     <div className="countries">
       {countries.map((item) => (
         <Box key={item.name.en} my={4} className="cardContainer">
-          <FiCard className="card">
-            <FiCardMedia
+          <Card className="card">
+            <CardMedia
               media="picture"
               className="countryImage"
               alt="Country Photo"
               image={item.introPhoto}
               title="Country Photo"
             />
-            <FiCardContent>
+            <CardContent
+              style={{ position: 'relative', backgroundColor: 'transparent' }}
+            >
               <Typography gutterBottom variant="h5" component="h2">
                 {item.name[code]}
               </Typography>
               <Typography variant="body2" component="p">
                 {item.capital[code]}
               </Typography>
-            </FiCardContent>
-            <FiCardActions>
+            </CardContent>
+            <CardActions style={{ position: 'relative' }}>
               <Link
                 className="link"
                 to={`/country/${item.name.en.toLowerCase()}`}
@@ -55,8 +55,8 @@ const CountryCards = (props) => {
                   {translate.learnMore[code]}
                 </Button>
               </Link>
-            </FiCardActions>
-          </FiCard>
+            </CardActions>
+          </Card>
         </Box>
       ))}
     </div>
