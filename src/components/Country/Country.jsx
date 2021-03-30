@@ -5,7 +5,7 @@ import ErrorFallback from '../ErrorBoundary/ErrorBoundary';
 import { ErrorBoundary } from 'react-error-boundary';
 import './Country.scss';
 import Widgets from './Widgets/Widgets';
-import CountryMap from './CountryMap/CountryMap';
+import CountryMap from './CountryMap';
 import Spinner from '../Spinner/Spinner';
 import Attractions from './Attractions/Attractions';
 import MainInfo from './MainInfo/MainInfo';

@@ -1,14 +1,14 @@
 import React, { Suspense, lazy } from 'react';
 import './App.scss';
-import Footer from './components/Footer/Footer';
-import Header from './components/Header/Header';
+import Footer from './components/Footer';
+import Header from './components/Header';
 import { Switch, Route } from 'react-router-dom';
 import { GlobalCountryContext } from './context/GlobalContext';
 import CountrySearch from './components/Countries/CountrySearch';
-import Countries from './components/Countries/Countries';
-import Spinner from './components/Spinner/Spinner';
-const Country = lazy(() => import('./components/Country/Country'));
-const NotFound = lazy(() => import('./components/NotFound/NotFound'));
+import Countries from './components/Countries';
+import Spinner from './components/Spinner';
+const Country = lazy(() => import('./components/Country'));
+const NotFound = lazy(() => import('./components/NotFound'));
 
 const App = () => {
   return (
