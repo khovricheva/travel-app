@@ -18,7 +18,7 @@ function Video({ countryName, videoId }) {
       }}
     >
       <div className='video'>
-        <h3 className='videoHeading'>
+        <h3 className='countryHeading videoHeading'>
           {translate.videoHeading[code]} {countryName}
         </h3>
         <div className='videoContainer'>

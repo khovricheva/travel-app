@@ -19,20 +19,24 @@ function MainInfo({ countryName, capital, info, population, currencies }) {
       <div className='countryInfo'>
         <h2 className='countryName'>{countryName}</h2>
         <div>
-          <h3>{translate.capital[code]}</h3>
-          {capital}
+          <h3 className='countryHeading'>{translate.capital[code]}</h3>
+          <p className='infoContent'>{capital}</p>
         </div>
         <div>
-          <h3>{translate.info[code]}</h3>
-          {info}
+          <h3 className='countryHeading'>{translate.info[code]}</h3>
+          <p className='infoContent'>{info}</p>
         </div>
         <div>
-          <h3>{translate.population[code]}</h3>
-          {population} {translate.populationUnits[code]}
+          <h3 className='countryHeading'>{translate.population[code]}</h3>
+          <p className='infoContent'>
+            {population} {translate.populationUnits[code]}
+          </p>
         </div>
         <div>
-          <h3>{translate.currency[code]}</h3>
-          {currencies.name}, {currencies.symbol}
+          <h3 className='countryHeading'>{translate.currency[code]}</h3>
+          <p className='infoContent'>
+            {currencies.name}, {currencies.symbol}
+          </p>
         </div>
       </div>
     </ErrorBoundary>

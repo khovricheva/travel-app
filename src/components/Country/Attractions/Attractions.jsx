@@ -34,7 +34,7 @@ function Attractions({ attractions }) {
       }}
     >
       <div className='attractions'>
-        <h3 className='attractionsHeading'>
+        <h3 className='countryHeading attractionsHeading'>
           {translate.headingAttractions[code]}
         </h3>
         <ImageGallery items={images} lazyLoad={true} />

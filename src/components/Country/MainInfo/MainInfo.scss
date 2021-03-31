@@ -2,8 +2,27 @@
   div {
     padding-bottom: 10px;
     text-align: justify;
+
+    .infoContent {
+      font-size: 1.2rem;
+    }
   }
   .countryName {
+    font-size: 2rem;
     text-align: center;
+    color: rgb(0, 168, 247);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .countryInfo {
+    .countryName {
+      font-size: 1.5rem;
+    }
+    div {
+      .infoContent {
+        font-size: 1rem;
+      }
+    }
   }
 }

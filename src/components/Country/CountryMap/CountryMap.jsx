@@ -33,7 +33,7 @@ function CountryMap({ lat, lon, countryName, capital, geoCoordinates }) {
     >
       <div className='countryMap' id='mapid'>
         <div className='heading'>
-          <h3 className='mapHeading'>
+          <h3 className='countryHeading'>
             {countryName} {translate.mapHeading[code]}
           </h3>
           <Button
@@ -66,7 +66,6 @@ function CountryMap({ lat, lon, countryName, capital, geoCoordinates }) {
               lineCap='round'
               lineJoin='round'
             />
-
             <Marker position={[lat, lon]}>
               <Popup>{capital}</Popup>
             </Marker>
