@@ -6,11 +6,11 @@ import SearchIcon from '@material-ui/icons/Search';
 import ClearIcon from '@material-ui/icons/Clear';
 import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import translate from '../../translate'
-
+import translate from '../../translate';
 
 const Input = () => {
   const [input, setInput] = useState('');
+  const [isOpen, setIsOpen] = useState(false);
   const code = useSelector((state) => state.code);
   const history = useHistory();
 
@@ -30,27 +30,58 @@ const Input = () => {
   const clearInput = () => {
     setInput('');
   };
-  
-  return (
-    <Paper className="inputForm" noValidate autoComplete="off">
-      <InputBase
-        className="input"
-        placeholder={translate.input[code]}
-        type="text"
-        value={input}
-        onChange={(e) => handleChangeInput(e)}
-        onKeyDown={(e) => handleEnter(e)}
-      />
-      {input.length !== 0 ? (
-        <IconButton className="icon" onClick={clearInput}>
-          <ClearIcon />
-        </IconButton>
-      ) : null}
 
-      <IconButton className="icon" onClick={() => handleEnter('start')}>
+  return (
+    <>
+      <Paper className='inputForm' noValidate autoComplete='off'>
+        <InputBase
+          className='input'
+          placeholder={translate.input[code]}
+          type='text'
+          value={input}
+          onChange={(e) => handleChangeInput(e)}
+          onKeyDown={(e) => handleEnter(e)}
+        />
+        {input.length !== 0 ? (
+          <IconButton className='icon' onClick={clearInput}>
+            <ClearIcon />
+          </IconButton>
+        ) : null}
+
+        <IconButton className='icon' onClick={() => handleEnter('start')}>
+          <SearchIcon />
+        </IconButton>
+      </Paper>
+
+      <IconButton className='searchIcon' onClick={() => setIsOpen(!isOpen)}>
         <SearchIcon />
       </IconButton>
-    </Paper>
+
+      {isOpen && (
+        <Paper className='inputFormMobile' noValidate autoComplete='off'>
+          <InputBase
+            className='inputMobile'
+            placeholder={translate.input[code]}
+            type='text'
+            value={input}
+            onChange={(e) => handleChangeInput(e)}
+            onKeyDown={(e) => handleEnter(e)}
+          />
+          {input.length !== 0 ? (
+            <IconButton className='iconMobile' onClick={clearInput}>
+              <ClearIcon />
+            </IconButton>
+          ) : null}
+
+          <IconButton
+            className='iconMobile'
+            onClick={() => handleEnter('start')}
+          >
+            <SearchIcon />
+          </IconButton>
+        </Paper>
+      )}
+    </>
   );
 };
 
