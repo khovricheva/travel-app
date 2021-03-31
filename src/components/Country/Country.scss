@@ -4,3 +4,12 @@
   height: 20rem;
   object-position: 50% 40%;
 }
+.countryHeading {
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .countryHeading {
+    font-size: 1.2rem;
+  }
+}

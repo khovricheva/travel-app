@@ -12,6 +12,7 @@
     outline: none;
 
     .image-gallery-description {
+      font-size: calc(12px + 7 * (100vw / 912));
       background: rgba(0, 0, 0, 0.7);
     }
   }

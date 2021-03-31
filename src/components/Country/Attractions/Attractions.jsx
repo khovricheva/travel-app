@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import ErrorFallback from '../../ErrorBoundary/ErrorBoundary';
+import { ErrorBoundary } from 'react-error-boundary';
 import ImageGallery from 'react-image-gallery';
 import translate from '../../../translate';
 import './Attractions.scss';
@@ -24,12 +26,20 @@ function Attractions({ attractions }) {
   }, [attractions, code]);
 
   return (
-    <div className='attractions'>
-      <h3 className='attractionsHeading'>
-        {translate.headingAttractions[code]}
-      </h3>
-      <ImageGallery items={images} lazyLoad={true} />
-    </div>
+    <ErrorBoundary
+      FallbackComponent={ErrorFallback}
+      onReset={() => {
+        window.location.reload();
+        localStorage.clear();
+      }}
+    >
+      <div className='attractions'>
+        <h3 className='countryHeading attractionsHeading'>
+          {translate.headingAttractions[code]}
+        </h3>
+        <ImageGallery items={images} lazyLoad={true} />
+      </div>
+    </ErrorBoundary>
   );
 }
 
