@@ -19,6 +19,7 @@ const Input = () => {
       if (input.length !== 0) {
         history.push(`/search/text=${input}`);
         setInput('');
+        setIsOpen(false);
       }
     }
   };
@@ -33,48 +34,48 @@ const Input = () => {
 
   return (
     <>
-      <Paper className='inputForm' noValidate autoComplete='off'>
+      <Paper className="inputForm" noValidate autoComplete="off">
         <InputBase
-          className='input'
+          className="input"
           placeholder={translate.input[code]}
-          type='text'
+          type="text"
           value={input}
           onChange={(e) => handleChangeInput(e)}
           onKeyDown={(e) => handleEnter(e)}
         />
         {input.length !== 0 ? (
-          <IconButton className='icon' onClick={clearInput}>
+          <IconButton className="icon" onClick={clearInput}>
             <ClearIcon />
           </IconButton>
         ) : null}
 
-        <IconButton className='icon' onClick={() => handleEnter('start')}>
+        <IconButton className="icon" onClick={() => handleEnter('start')}>
           <SearchIcon />
         </IconButton>
       </Paper>
 
-      <IconButton className='searchIcon' onClick={() => setIsOpen(!isOpen)}>
+      <IconButton className="searchIcon" onClick={() => setIsOpen(!isOpen)}>
         <SearchIcon />
       </IconButton>
 
       {isOpen && (
-        <Paper className='inputFormMobile' noValidate autoComplete='off'>
+        <Paper className="inputFormMobile" noValidate autoComplete="off">
           <InputBase
-            className='inputMobile'
+            className="inputMobile"
             placeholder={translate.input[code]}
-            type='text'
+            type="text"
             value={input}
             onChange={(e) => handleChangeInput(e)}
             onKeyDown={(e) => handleEnter(e)}
           />
           {input.length !== 0 ? (
-            <IconButton className='iconMobile' onClick={clearInput}>
+            <IconButton className="iconMobile" onClick={clearInput}>
               <ClearIcon />
             </IconButton>
           ) : null}
 
           <IconButton
-            className='iconMobile'
+            className="iconMobile"
             onClick={() => handleEnter('start')}
           >
             <SearchIcon />
