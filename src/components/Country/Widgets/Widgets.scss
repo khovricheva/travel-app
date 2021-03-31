@@ -12,3 +12,9 @@
   height: 20rem;
   padding: 10px;
 }
+
+@media screen and (max-width: 391px) {
+  .widgets {
+    top: 7.3rem;
+  }
+}
