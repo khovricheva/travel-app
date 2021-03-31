@@ -48,7 +48,7 @@ const CountryCards = (props) => {
             </CardContent>
             <CardActions style={{ position: 'relative' }}>
               <Link
-                className="link"
+                className='link'
                 to={`/country/${item.name.en.toLowerCase()}`}
               >
                 <Button size="small" color="inherit" variant="outlined">

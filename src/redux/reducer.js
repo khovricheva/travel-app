@@ -1,4 +1,4 @@
-import { ENGLISH, RUSSIAN, UKRAINIAN } from './actions';
+import { ENGLISH, RUSSIAN, UKRAINIAN } from './actiontypes';
 
 const langaugeState = {
   langauge: 'English',
