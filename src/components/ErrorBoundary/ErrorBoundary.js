@@ -1,6 +1,7 @@
-const ErrorFallback = ({ error, resetErrorBoundary }) => {
+import React from 'react';
+const ErrorBoundary = ({ error, resetErrorBoundary }) => {
   return (
-    <div role="alert">
+    <div role="alert" className='error'>
       <p>Something went wrong:</p>
       <pre>{error.message}</pre>
       <button onClick={resetErrorBoundary}>On home page</button>
@@ -8,4 +9,4 @@ const ErrorFallback = ({ error, resetErrorBoundary }) => {
   );
 };
 
-export default ErrorFallback;
+export default ErrorBoundary;

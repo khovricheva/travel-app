@@ -2,7 +2,7 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import { useSelector } from 'react-redux';
-import NotFound from '../NotFound/NotFound';
+import NotFound from '../NotFound';
 import { Link } from 'react-router-dom';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { CountryContext } from '../../context/GlobalContext';
 import { useLocation } from 'react-router-dom';
 import CountryCards from './CountryCards';
-import ErrorFallback from '../ErrorBoundary/ErrorBoundary';
+import ErrorFallback from '../ErrorBoundary';
 import { ErrorBoundary } from 'react-error-boundary';
 
 const countryFilter = (countries, name) => {
