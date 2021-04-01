@@ -13,7 +13,7 @@ const CurrencyWidget = ({ currencyCode, countryCode }) => {
     const getData = async () => {
       try {
         const result = await axios.get(
-          `https://api.exchangeratesapi.io/latest?base=EUR`
+          `http://data.fixer.io/api/latest?access_key=dfa3c8cfb88784ccf31a0f7796d14f41`
         );
         if (!isCancelled) setCurrency(result.data.rates[currencyCode]);
       } catch (e) {
