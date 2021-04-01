@@ -6,129 +6,53 @@
   width: 195px;
 }
 
-.cssload-loader {
-  width: 49px;
-  height: 49px;
+@keyframes ldio {
+  0% {
+    top: 96px;
+    left: 96px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 18px;
+    left: 18px;
+    width: 156px;
+    height: 156px;
+    opacity: 0;
+  }
+}
+.ldio div {
+  position: absolute;
+  border-width: 4px;
+  border-style: solid;
+  opacity: 1;
   border-radius: 50%;
-  margin: 3em;
+  animation: ldio 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.ldio div:nth-child(1) {
+  border-color: #4da8f7;
+  animation-delay: 0s;
+}
+.ldio div:nth-child(2) {
+  border-color: #689cc5;
+  animation-delay: -0.5s;
+}
+.loadingio-spinner-ripple {
+  width: 200px;
+  height: 200px;
   display: inline-block;
-  position: relative;
-  vertical-align: middle;
+  overflow: hidden;
+  background: transparent;
 }
-
-.cssload-loader {
-  width: 49px;
-  height: 49px;
-  border-radius: 50%;
-  margin: 3em;
-  display: inline-block;
-  position: relative;
-  vertical-align: middle;
-}
-.cssload-loader,
-.cssload-loader:before,
-.cssload-loader:after {
-  animation: 0.8s infinite ease-in-out;
-  -o-animation: 0.8s infinite ease-in-out;
-  -ms-animation: 0.8s infinite ease-in-out;
-  -webkit-animation: 0.8s infinite ease-in-out;
-  -moz-animation: 0.8s infinite ease-in-out;
-}
-.cssload-loader:before,
-.cssload-loader:after {
+.ldio {
   width: 100%;
   height: 100%;
-  border-radius: 50%;
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
+  transform: translateZ(0) scale(1);
+  backface-visibility: hidden;
+  transform-origin: 0 0; /* see note above */
 }
-
-.cssload-loader:before,
-.cssload-loader:after {
-  content: '';
-}
-
-.cssload-loader {
-  background-color: white;
-  animation: cssload-flower-fan 0.32s infinite linear;
-  -o-animation: cssload-flower-fan 0.32s infinite linear;
-  -ms-animation: cssload-flower-fan 0.32s infinite linear;
-  -webkit-animation: cssload-flower-fan 0.32s infinite linear;
-  -moz-animation: cssload-flower-fan 0.32s infinite linear;
-}
-.cssload-loader:before {
-  content: '';
-  width: 80%;
-  height: 80%;
-  background-color: white;
-  top: 10%;
-  left: 10%;
-  box-shadow: 5px -3px 0 rgba(255, 100, 100, 0.7),
-    5px 5px 0 rgba(100, 255, 100, 0.7), -3px 5px 0 rgba(100, 100, 255, 0.7),
-    -5px -5px 0 rgba(240, 240, 120, 0.7);
-  -o-box-shadow: 5px -3px 0 rgba(255, 100, 100, 0.7),
-    5px 5px 0 rgba(100, 255, 100, 0.7), -3px 5px 0 rgba(100, 100, 255, 0.7),
-    -5px -5px 0 rgba(240, 240, 120, 0.7);
-  -ms-box-shadow: 5px -3px 0 rgba(255, 100, 100, 0.7),
-    5px 5px 0 rgba(100, 255, 100, 0.7), -3px 5px 0 rgba(100, 100, 255, 0.7),
-    -5px -5px 0 rgba(240, 240, 120, 0.7);
-  -webkit-box-shadow: 5px -3px 0 rgba(255, 100, 100, 0.7),
-    5px 5px 0 rgba(100, 255, 100, 0.7), -3px 5px 0 rgba(100, 100, 255, 0.7),
-    -5px -5px 0 rgba(240, 240, 120, 0.7);
-  -moz-box-shadow: 5px -3px 0 rgba(255, 100, 100, 0.7),
-    5px 5px 0 rgba(100, 255, 100, 0.7), -3px 5px 0 rgba(100, 100, 255, 0.7),
-    -5px -5px 0 rgba(240, 240, 120, 0.7);
-}
-.cssload-loader:after {
-  content: '';
-  border: 3px solid white;
-  z-index: 2;
-  top: -3px;
-  left: -3px;
-}
-
-@keyframes cssload-flower-fan {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@-o-keyframes cssload-flower-fan {
-  0% {
-    -o-transform: rotate(0deg);
-  }
-  100% {
-    -o-transform: rotate(360deg);
-  }
-}
-
-@-ms-keyframes cssload-flower-fan {
-  0% {
-    -ms-transform: rotate(0deg);
-  }
-  100% {
-    -ms-transform: rotate(360deg);
-  }
-}
-
-@-webkit-keyframes cssload-flower-fan {
-  0% {
-    -webkit-transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
-}
-
-@-moz-keyframes cssload-flower-fan {
-  0% {
-    -moz-transform: rotate(0deg);
-  }
-  100% {
-    -moz-transform: rotate(360deg);
-  }
+.ldio div {
+  box-sizing: content-box;
 }
