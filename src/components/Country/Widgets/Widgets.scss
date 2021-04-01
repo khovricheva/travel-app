@@ -1,3 +1,5 @@
+@import '../../../colors.scss';
+
 .widgets {
   box-sizing: border-box;
   display: flex;
@@ -6,7 +8,7 @@
   position: absolute;
   right: 0;
   top: 5rem;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: $bgWidgets-light;
   text-align: center;
   backdrop-filter: blur(6px);
   height: 20rem;

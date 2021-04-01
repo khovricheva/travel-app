@@ -1,5 +1,20 @@
+@import './colors.scss';
+
+body.dark-mode {
+  background-color: $bgPage-dark;
+  color: $textPage-light;
+
+  .header {
+    background-color: $bgHeader-dark;
+  }
+
+  .widgets {
+    background-color: $bgWidgets-dark;
+  }
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }

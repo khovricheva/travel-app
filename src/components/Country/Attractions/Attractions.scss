@@ -1,4 +1,5 @@
 @import '~react-image-gallery/styles/scss/image-gallery.scss';
+@import '/src/colors.scss';
 
 .attractions {
   margin: 2rem 0;
@@ -18,6 +19,6 @@
   }
 
   .image-gallery-icon:hover {
-    color: #4da8f7;
+    color: $light-blue;
   }
 }

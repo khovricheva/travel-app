@@ -1,3 +1,5 @@
+@import '/src/colors.scss';
+
 .countryInfo {
   div {
     padding-bottom: 10px;
@@ -10,7 +12,7 @@
   .countryName {
     font-size: 2rem;
     text-align: center;
-    color: rgb(0, 168, 247);
+    color: $light-blue;
   }
 }
 

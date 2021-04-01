@@ -1,3 +1,5 @@
+@import '/src/colors.scss';
+
 .countryMap {
   width: 100%;
 }
@@ -6,7 +8,7 @@
   justify-content: space-between;
 
   .fullScreenBtn {
-    background-color: rgb(0, 168, 247);
+    background-color: $light-blue;
   }
 }
 
