@@ -58,10 +58,10 @@ const Country = (props) => {
         >
           <img
             src={country.introPhoto}
-            alt='countrImage'
-            className='mainImage'
+            alt="countrImage"
+            className="mainImage"
           />
-          <Container maxWidth='md' className='country'>
+          <Container maxWidth="md" className="country">
             <Widgets
               cityObj={country.capital}
               city={country.capital[code]}
@@ -69,7 +69,6 @@ const Country = (props) => {
               countryCode={country.alpha2Code}
               timezone={country.timezones}
             />
-
             <MainInfo
               countryName={country.name[code]}
               capital={country.capital[code]}

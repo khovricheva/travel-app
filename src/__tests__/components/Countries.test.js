@@ -1,10 +1,10 @@
 import React from 'react';
+import Countries from '../../components/Countries';
 import { render } from '../test-utils';
-import App from '../../App';
 
 describe('App component', () => {
   it('Renders correctly', () => {
-    const wrapper = render(<App />);
+    const wrapper = render(<Countries />);
     expect(wrapper).toMatchSnapshot();
   });
 });
