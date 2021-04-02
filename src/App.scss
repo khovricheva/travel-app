@@ -1,15 +1,22 @@
 @import './colors.scss';
 
+body {
+  background-color: white;
+  transition: background-color 500ms linear;
+}
+
 body.dark-mode {
   background-color: $bgPage-dark;
   color: $textPage-light;
-
+  transition: background-color 500ms linear;
   .header {
     background-color: $bgHeader-dark;
+    transition: background-color 500ms linear;
   }
 
   .widgets {
     background-color: $bgWidgets-dark;
+    transition: background-color 500ms linear;
   }
 }
 

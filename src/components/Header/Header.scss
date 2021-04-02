@@ -7,6 +7,7 @@
   min-height: 5rem;
   padding: 1rem 0;
   background-color: $bgHeader-light;
+  transition: background-color 500ms linear;
   color: white;
   align-items: center;
   padding-left: 5%;
