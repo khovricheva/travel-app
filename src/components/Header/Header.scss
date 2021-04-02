@@ -44,6 +44,9 @@
   .searchIcon {
     display: none;
   }
+  .modal {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 880px) {
@@ -54,6 +57,19 @@
     .searchIcon {
       display: block;
       color: #fff;
+    }
+    .selectForm {
+      display: none;
+    }
+    .modal {
+      display: inline;
+      .modalButton {
+        color: $textPage-light;
+        border: none;
+      }
+      .modalContent {
+        background-color: black;
+      }
     }
     .inputFormMobile {
       display: flex;

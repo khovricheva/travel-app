@@ -6,6 +6,7 @@ import ErrorFallback from '../ErrorBoundary';
 import { ErrorBoundary } from 'react-error-boundary';
 
 const countryFilter = (countries, name) => {
+  if (countries.length === 0) return [];
   const result = countries.filter(
     (item) =>
       item.name.en.toLowerCase().includes(name) ||
