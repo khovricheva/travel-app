@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import translate from '../../translate';
-import './Title.scss';
 
 const Title = () => {
   const code = useSelector((state) => state.code);

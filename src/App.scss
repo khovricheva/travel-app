@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: white;
+  background-color: $white;
   transition: background-color 500ms linear;
 }
 
@@ -24,5 +24,32 @@ body.dark-mode {
     background-color: $bgWidgets-dark;
     transition: background-color 500ms linear;
   }
-}
 
+  .MuiDialogTitle-root {
+    color: $textPage-light;
+    background-color: $bgPage-dark;
+  }
+
+  .MuiDialogContent-root {
+    background-color: $bgPage-dark;
+    .MuiInputBase-root {
+      color: $white;
+    }
+    .MuiSelect-icon {
+      color: $white;
+    }
+    .MuiOutlinedInput-notchedOutline {
+      border-color: $white;
+    }
+  }
+  .MuiDialogActions-root {
+    color: $textPage-light;
+    background-color: $bgPage-dark;
+  }
+  @media screen and (max-width: 880px) {
+    .MuiList-root {
+      color: $white;
+      background-color: $bgPage-dark;
+    }
+  }
+}

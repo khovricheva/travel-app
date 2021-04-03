@@ -5,7 +5,6 @@ const DarkMode = () => {
   const [isDarkMode, setIsDarkMode] = useState(
     JSON.parse(localStorage.getItem('DARK_MODE'))
   );
-
   const addClass = (isDarkMode) => {
     isDarkMode
       ? document.body.classList.add('dark-mode')

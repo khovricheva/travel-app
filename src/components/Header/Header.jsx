@@ -12,9 +12,11 @@ const Header = () => {
   return (
     <header className="header">
       <Title />
+      <div style={{display: 'flex', alignItems: 'center'}}>
         {!location.pathname.includes('country') ? <Input /> : null}
         <Language />
         <DarkMode />
+      </div>
     </header>
   );
 };

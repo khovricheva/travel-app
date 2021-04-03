@@ -13,12 +13,19 @@
   padding-left: 5%;
   padding-right: 5%;
 
+  .title {
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+
   .inputForm {
     display: flex;
     justify-content: space-between;
     padding: 2px 4px;
     align-items: center;
-    width: 400px;
+    width: 350px;
 
     .input {
       margin-left: 5px;
@@ -67,9 +74,6 @@
         color: $textPage-light;
         border: none;
       }
-      .modalContent {
-        background-color: black;
-      }
     }
     .inputFormMobile {
       display: flex;
@@ -101,9 +105,19 @@
   .header {
     flex-wrap: wrap;
     justify-content: space-around;
+  }
+}
 
+@media screen and (max-width: 347px) {
+  .header {
     .inputFormMobile {
-      top: 7.3rem;
+      top: 6.6rem;
     }
   }
+}
+
+.MuiDialogContent-root {
+  display: flex;
+  justify-content: center;
+  padding: 0;
 }
