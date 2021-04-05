@@ -7,6 +7,7 @@ Object {
     <div>
       <div
         class="wrapper"
+        data-testid="spinner"
       >
         <div
           class="loadingio-spinner-ripple"
@@ -24,6 +25,7 @@ Object {
   "container": <div>
     <div
       class="wrapper"
+      data-testid="spinner"
     >
       <div
         class="loadingio-spinner-ripple"

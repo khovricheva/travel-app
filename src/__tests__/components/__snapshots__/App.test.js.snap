@@ -391,6 +391,7 @@ Object {
       </header>
       <div
         class="wrapper"
+        data-testid="spinner"
       >
         <div
           class="loadingio-spinner-ripple"
@@ -854,6 +855,7 @@ Object {
     </header>
     <div
       class="wrapper"
+      data-testid="spinner"
     >
       <div
         class="loadingio-spinner-ripple"
