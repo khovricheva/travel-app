@@ -2,7 +2,8 @@ import React from 'react';
 import { render, screen } from '../test-utils';
 import Country from '../../components/Country/Country';
 
-describe('App component', () => {
+
+describe('Country component', () => {
 
   const defaultProps = {
     match: { params: { code: 'germany' } },

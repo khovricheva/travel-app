@@ -12,7 +12,6 @@ const Country = lazy(() => import('./components/Country'));
 const NotFound = lazy(() => import('./components/NotFound'));
 
 const App = () => {
-  
   const [countries, setCountries] = useState([]);
 
   useEffect(() => {
@@ -35,6 +34,7 @@ const App = () => {
       }
     };
     getData();
+
     return () => (isCancelled = true);
   }, []);
 

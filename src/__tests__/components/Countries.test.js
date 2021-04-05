@@ -1,8 +1,8 @@
 import React from 'react';
 import Countries from '../../components/Countries/Countries';
-import { render, screen } from '../test-utils';
+import { render } from '../test-utils';
 
-describe('App component', () => {
+describe('Country component', () => {
   const countries = [
     {
       name: {
@@ -21,7 +21,7 @@ describe('App component', () => {
     },
   ];
   it('Renders correctly', () => {
-    const wrapper = render(<Countries countries={countries} />);
+    const wrapper = render(<Countries countries={countries}/>);
     expect(wrapper).toMatchSnapshot();
   });
 });
