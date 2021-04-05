@@ -1,3 +1,4 @@
+
 .notFound {
     display: flex;
     justify-content: center;
@@ -5,14 +6,20 @@
     align-items: center;
     margin-top: 40px;
     margin-bottom: 40px;
+
     .notFoundText {
-        font-size: 30px;
+        text-align: center;
+        font-size: 3rem;
         margin: 10px;
     }
     .notFoundBtn {
-        padding: 10px;
+        margin: 10px;
+        padding: 15px 20px 15px 20px;
         background-color: transparent;
         border-radius: 5px;
         cursor: pointer;
+    }
+    .notFoundBtn:hover {
+        transform: scale(1.1);
     }
 }
