@@ -7,6 +7,7 @@ import { GlobalCountryContext } from './context/GlobalContext';
 import CountrySearch from './components/Countries/CountrySearch';
 import Countries from './components/Countries';
 import Spinner from './components/Spinner';
+
 const Country = lazy(() => import('./components/Country'));
 const NotFound = lazy(() => import('./components/NotFound'));
 

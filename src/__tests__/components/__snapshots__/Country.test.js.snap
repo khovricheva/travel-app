@@ -4,9 +4,39 @@ exports[`App component Renders correctly 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
-    <div />
+    <div>
+      <div
+        class="wrapper"
+      >
+        <div
+          class="loadingio-spinner-ripple"
+        >
+          <div
+            class="ldio"
+          >
+            <div />
+            <div />
+          </div>
+        </div>
+      </div>
+    </div>
   </body>,
-  "container": <div />,
+  "container": <div>
+    <div
+      class="wrapper"
+    >
+      <div
+        class="loadingio-spinner-ripple"
+      >
+        <div
+          class="ldio"
+        >
+          <div />
+          <div />
+        </div>
+      </div>
+    </div>
+  </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
   "findAllByDisplayValue": [Function],

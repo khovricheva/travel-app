@@ -1,15 +1,26 @@
 import React from 'react';
 import { render } from '../test-utils';
 import Country from '../../components/Country/Country';
-import { Route } from 'react-router-dom';
 
 describe('App component', () => {
   it('Renders correctly', () => {
-    const wrapper = render(
-      <Route path='/country/germany'>
-        <Country />
-      </Route>
-    );
+    const defaultProps = {
+      match: { params: { code: 'germany' } },
+    };
+    const wrapper = render(<Country {...defaultProps} />);
     expect(wrapper).toMatchSnapshot();
   });
 });
+ 
+
+// const renderWithProps = (props) => {
+//   const defaultProps = {
+//     match: { params: { code: 'germany' } },
+//   };
+//   return render.create(<Country {...defaultProps} />);
+// };
+
+// test('should render', () => {
+//   renderWithProps({});
+//   expect(wrapper.toJSON()).toMatchSnapshot();
+// });
