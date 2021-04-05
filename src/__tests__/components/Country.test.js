@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from '../test-utils';
 import Country from '../../components/Country/Country';
 
+//test
 describe('App component', () => {
   it('Renders correctly', () => {
     const defaultProps = {
