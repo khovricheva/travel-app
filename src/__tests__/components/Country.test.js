@@ -3,6 +3,7 @@ import { render } from '../test-utils';
 import Country from '../../components/Country/Country';
 import { Route } from 'react-router-dom';
 
+//test
 describe('App component', () => {
   it('Renders correctly', () => {
     const wrapper = render(
