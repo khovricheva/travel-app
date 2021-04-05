@@ -1,5 +1,4 @@
-import React, { useContext } from 'react';
-import { CountryContext } from '../../context/GlobalContext';
+import React from 'react';
 import { useLocation } from 'react-router-dom';
 import CountryCards from './CountryCards';
 import ErrorFallback from '../ErrorBoundary';
@@ -19,12 +18,12 @@ const countryFilter = (countries, name) => {
   return result.length === 0 ? 'NotFound' : result;
 };
 
-const CountrySearch = () => {
-  const countries = useContext(CountryContext);
-  const location = useLocation();
+const CountrySearch = ({countries}) => {
 
+  const location = useLocation();
   const name = location.pathname.slice(13).toLowerCase();
   const countryResult = countryFilter(countries, name);
+
   return (
     <ErrorBoundary
       FallbackComponent={ErrorFallback}

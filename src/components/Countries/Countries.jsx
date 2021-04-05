@@ -1,12 +1,10 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import './Countries.scss';
-import { CountryContext } from '../../context/GlobalContext';
 import CountryCards from './CountryCards';
 import ErrorFallback from '../ErrorBoundary';
 import { ErrorBoundary } from 'react-error-boundary';
 
-const Countries = () => {
-  const countries = useContext(CountryContext);
+const Countries = ({countries}) => {
 
   return (
     <ErrorBoundary

@@ -6,17 +6,60 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="wrapper"
-        data-testid="spinner"
+        class="countries"
       >
         <div
-          class="loadingio-spinner-ripple"
+          class="MuiBox-root MuiBox-root-1 cardContainer"
         >
           <div
-            class="ldio"
+            class="MuiPaper-root MuiCard-root card MuiPaper-elevation1 MuiPaper-rounded"
           >
-            <div />
-            <div />
+            <div
+              alt="Country Photo"
+              class="MuiCardMedia-root countryImage"
+              media="picture"
+              style="background-image: url(https://travel-api-git-main-imbatman.vercel.app/countriesPhoto/1.jpg);"
+              title="Country Photo"
+            />
+            <div
+              class="MuiCardContent-root"
+              style="position: relative; background-color: transparent;"
+            >
+              <h2
+                class="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom"
+              >
+                Austria
+              </h2>
+              <p
+                class="MuiTypography-root MuiTypography-body2"
+              >
+                Vienna
+              </p>
+            </div>
+            <div
+              class="MuiCardActions-root MuiCardActions-spacing"
+              style="position: relative;"
+            >
+              <a
+                class="link"
+                href="/country/austria"
+              >
+                <button
+                  class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-colorInherit MuiButton-outlinedSizeSmall MuiButton-sizeSmall"
+                  tabindex="0"
+                  type="button"
+                >
+                  <span
+                    class="MuiButton-label"
+                  >
+                    Learn More
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </button>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -24,17 +67,60 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="wrapper"
-      data-testid="spinner"
+      class="countries"
     >
       <div
-        class="loadingio-spinner-ripple"
+        class="MuiBox-root MuiBox-root-1 cardContainer"
       >
         <div
-          class="ldio"
+          class="MuiPaper-root MuiCard-root card MuiPaper-elevation1 MuiPaper-rounded"
         >
-          <div />
-          <div />
+          <div
+            alt="Country Photo"
+            class="MuiCardMedia-root countryImage"
+            media="picture"
+            style="background-image: url(https://travel-api-git-main-imbatman.vercel.app/countriesPhoto/1.jpg);"
+            title="Country Photo"
+          />
+          <div
+            class="MuiCardContent-root"
+            style="position: relative; background-color: transparent;"
+          >
+            <h2
+              class="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom"
+            >
+              Austria
+            </h2>
+            <p
+              class="MuiTypography-root MuiTypography-body2"
+            >
+              Vienna
+            </p>
+          </div>
+          <div
+            class="MuiCardActions-root MuiCardActions-spacing"
+            style="position: relative;"
+          >
+            <a
+              class="link"
+              href="/country/austria"
+            >
+              <button
+                class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-colorInherit MuiButton-outlinedSizeSmall MuiButton-sizeSmall"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiButton-label"
+                >
+                  Learn More
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </a>
+          </div>
         </div>
       </div>
     </div>
