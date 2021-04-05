@@ -12,9 +12,7 @@ const CurrencyWidget = ({ currencyCode, countryCode }) => {
     let isCancelled = false;
     const getData = async () => {
       try {
-        const result = await axios.get(
-          `http://data.fixer.io/api/latest?access_key=dfa3c8cfb88784ccf31a0f7796d14f41`
-        );
+        const result = await axios.get(`https://api.ratesapi.io/api/latest`);
         if (!isCancelled) setCurrency(result.data.rates[currencyCode]);
       } catch (e) {
         if (!isCancelled) {
