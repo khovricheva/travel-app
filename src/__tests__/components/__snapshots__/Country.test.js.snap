@@ -1,40 +1,1224 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Country component Renders correctly 1`] = `
+exports[`Country get Snapshot after data fetch 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
+      <img
+        alt="countrImage"
+        class="mainImage"
+        src="https://travel-api-git-main-imbatman.vercel.app/countriesPhoto/11.jpg"
+      />
       <div
-        class="wrapper"
-        data-testid="spinner"
+        class="MuiContainer-root country MuiContainer-maxWidthMd"
       >
         <div
-          class="loadingio-spinner-ripple"
+          class="widgets"
         >
           <div
-            class="ldio"
+            class="timeWidget"
           >
+            <h4>
+              Local time in
+               
+              Berlin
+            </h4>
             <div />
-            <div />
+            <div>
+              April 7, 2021
+            </div>
+          </div>
+          <div
+            class="wrapper"
+            data-testid="spinner"
+          >
+            <div
+              class="loadingio-spinner-ripple"
+            >
+              <div
+                class="ldio"
+              >
+                <div />
+                <div />
+              </div>
+            </div>
+          </div>
+          <div
+            class="currencyWidget"
+          >
+            <h4>
+               
+              Exchange rate
+            </h4>
+            <div>
+              <div>
+                <img
+                  alt="flag"
+                  src="https://www.countryflags.io/EU/shiny/24.png"
+                />
+                EUR 1 = 
+                1
+                 
+                EUR
+                <img
+                  alt="flag"
+                  src="https://www.countryflags.io/DE/shiny/24.png"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="countryInfo"
+        >
+          <h2
+            class="countryName"
+          >
+            Germany
+          </h2>
+          <div>
+            <h3
+              class="countryHeading"
+            >
+              Capital
+            </h3>
+            <p
+              class="infoContent"
+            >
+              Berlin
+            </p>
+          </div>
+          <div>
+            <h3
+              class="countryHeading"
+            >
+              Info
+            </h3>
+            <p
+              class="infoContent"
+            >
+              Germany, officially the Federal Republic of Germany, is a country at the intersection of Central and Western Europe. It is situated between the Baltic and North seas to the north, and the Alps to the south; covering an area of 357,022 square kilometres (137,847 sq mi), with a population of over 83 million within its 16 constituent states. It borders Denmark to the north, Poland and the Czech Republic to the east, Austria and Switzerland to the south, and France, Luxembourg, Belgium, and the Netherlands to the west. Germany is the second-most populous country in Europe after Russia, as well as the most populous member state of the European Union. Its capital and largest city is Berlin, and its financial centre is Frankfurt; the largest urban area is the Ruhr.
+            </p>
+          </div>
+          <div>
+            <h3
+              class="countryHeading"
+            >
+              Population
+            </h3>
+            <p
+              class="infoContent"
+            >
+              81770900
+               
+              people
+            </p>
+          </div>
+          <div>
+            <h3
+              class="countryHeading"
+            >
+              Currency
+            </h3>
+            <p
+              class="infoContent"
+            >
+              Euro
+              , 
+              €
+            </p>
+          </div>
+        </div>
+        <div
+          class="countryMap"
+          id="mapid"
+        >
+          <div
+            class="heading"
+          >
+            <h3
+              class="countryHeading"
+            >
+              Germany
+               
+              on world map
+            </h3>
+            <button
+              class="MuiButtonBase-root MuiButton-root MuiButton-contained fullScreenBtn MuiButton-containedPrimary"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="MuiButton-label"
+              >
+                Fullscreen map
+              </span>
+              <span
+                class="MuiTouchRipple-root"
+              />
+            </button>
+          </div>
+          <div
+            class="fullscreen"
+          >
+            <div
+              class="mapContainer leaflet-container leaflet-grab leaflet-touch-drag"
+              style="position: relative;"
+              tabindex="0"
+            >
+              <div
+                class="leaflet-pane leaflet-map-pane"
+                style="left: 0px; top: 0px;"
+              >
+                <div
+                  class="leaflet-pane leaflet-tile-pane"
+                >
+                  <div
+                    class="leaflet-layer "
+                    style="z-index: 1;"
+                  >
+                    <div
+                      class="leaflet-tile-container leaflet-zoom-animated"
+                      style="z-index: 18; left: 0px; top: 0px;"
+                    >
+                      <img
+                        alt=""
+                        class="leaflet-tile"
+                        role="presentation"
+                        src="https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/5/10/17"
+                        style="width: 256px; height: 256px; left: -49px; top: -127px;"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="leaflet-pane leaflet-shadow-pane"
+                >
+                  <img
+                    alt=""
+                    class="leaflet-marker-shadow leaflet-zoom-hide"
+                    src="marker-shadow.png"
+                    style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; left: 0px; top: 0px;"
+                  />
+                </div>
+                <div
+                  class="leaflet-pane leaflet-overlay-pane"
+                >
+                  <svg
+                    height="0"
+                    pointer-events="none"
+                    style="left: 0px; top: 0px;"
+                    viewBox="0 0 0 0"
+                    width="0"
+                  >
+                    <g>
+                      <path
+                        class="leaflet-interactive"
+                        d="M-2 2L-2 -2L2 -2L2 2z"
+                        fill="lime"
+                        fill-opacity="0.2"
+                        fill-rule="evenodd"
+                        stroke="none"
+                      />
+                    </g>
+                  </svg>
+                </div>
+                <div
+                  class="leaflet-pane leaflet-marker-pane"
+                >
+                  <img
+                    alt=""
+                    class="leaflet-marker-icon leaflet-zoom-hide leaflet-interactive"
+                    src="marker-icon.png"
+                    style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; left: 0px; top: 0px; z-index: 0;"
+                    tabindex="0"
+                  />
+                </div>
+                <div
+                  class="leaflet-pane leaflet-tooltip-pane"
+                />
+                <div
+                  class="leaflet-pane leaflet-popup-pane"
+                />
+              </div>
+              <div
+                class="leaflet-control-container"
+              >
+                <div
+                  class="leaflet-top leaflet-left"
+                >
+                  <div
+                    class="leaflet-control-zoom leaflet-bar leaflet-control"
+                  >
+                    <a
+                      aria-label="Zoom in"
+                      class="leaflet-control-zoom-in"
+                      href="#"
+                      role="button"
+                      title="Zoom in"
+                    >
+                      +
+                    </a>
+                    <a
+                      aria-label="Zoom out"
+                      class="leaflet-control-zoom-out"
+                      href="#"
+                      role="button"
+                      title="Zoom out"
+                    >
+                      −
+                    </a>
+                  </div>
+                </div>
+                <div
+                  class="leaflet-top leaflet-right"
+                />
+                <div
+                  class="leaflet-bottom leaflet-left"
+                />
+                <div
+                  class="leaflet-bottom leaflet-right"
+                >
+                  <div
+                    class="leaflet-control-attribution leaflet-control"
+                  >
+                    <a
+                      href="https://leafletjs.com"
+                      title="A JS library for interactive maps"
+                    >
+                      Leaflet
+                    </a>
+                     | © 
+                    <a
+                      href="http://osm.org/copyright"
+                    >
+                      OpenStreetMap
+                    </a>
+                     contributors
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="video"
+        >
+          <h3
+            class="countryHeading videoHeading"
+          >
+            Watch the video about
+             
+            Germany
+          </h3>
+          <div
+            class="videoContainer"
+          >
+            <div
+              class=""
+            >
+              <div />
+            </div>
+          </div>
+        </div>
+        <div
+          class="attractions"
+        >
+          <h3
+            class="countryHeading attractionsHeading"
+          >
+            Top-5 plases to visit
+          </h3>
+          <div
+            aria-live="polite"
+            class="image-gallery"
+          >
+            <div
+              class="image-gallery-content bottom"
+            >
+              <div
+                class="image-gallery-slide-wrapper bottom"
+              >
+                <button
+                  aria-label="Previous Slide"
+                  class="image-gallery-icon image-gallery-left-nav"
+                  type="button"
+                >
+                  <svg
+                    class="image-gallery-svg"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1"
+                    viewBox="6 0 12 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <polyline
+                      points="15 18 9 12 15 6"
+                    />
+                  </svg>
+                </button>
+                <button
+                  aria-label="Next Slide"
+                  class="image-gallery-icon image-gallery-right-nav"
+                  type="button"
+                >
+                  <svg
+                    class="image-gallery-svg"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1"
+                    viewBox="6 0 12 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <polyline
+                      points="9 18 15 12 9 6"
+                    />
+                  </svg>
+                </button>
+                <div
+                  class="image-gallery-swipe"
+                >
+                  <div
+                    class="image-gallery-slides"
+                  >
+                    <div
+                      aria-label="Go to Slide 1"
+                      class="image-gallery-slide  center "
+                      role="button"
+                      style="transform: translate3d(0%, 0, 0);"
+                      tabindex="-1"
+                    >
+                      <div>
+                        <img
+                          alt="Brandenburg Gate"
+                          class="image-gallery-image"
+                          src="https://top10.travel/wp-content/uploads/2014/09/brandenburgskie-vorota-1.jpg"
+                          title="Brandenburg Gate"
+                        />
+                        <span
+                          class="image-gallery-description"
+                        >
+                          Brandenburg Gate. The symbol of the capital of Germany, since 1989 a symbol of the country's reunification. Built by architect Karl Gottgard Langgans. He designed the gate based on the passages of the Acropolis. The building in the style of classicism is perfectly combined with the rest of the buildings on the Parisian square. The decoration of the gate is a 6-meter high quadriga with a chariot driven by Victoria, the goddess of victory. The bas-reliefs of the inner walls depict the exploits of Hercules.
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      aria-label="Go to Slide 2"
+                      class="image-gallery-slide  right "
+                      role="button"
+                      style="transform: translate3d(100%, 0, 0);"
+                      tabindex="-1"
+                    >
+                      <div>
+                        <img
+                          alt="Reichstag"
+                          class="image-gallery-image"
+                          src="https://top10.travel/wp-content/uploads/2014/09/reyhstag.jpg"
+                          title="Reichstag"
+                        />
+                        <span
+                          class="image-gallery-description"
+                        >
+                          Reichstag. State Assembly Building. This monumental structure is 137 meters long and 103 meters wide. Built in the Italian Renaissance style in 1894. The four towers of the building symbolize the German kingdoms. Their height is 46 meters. You can climb to the top of the glass dome, from where you can see the government quarter and the city itself.
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      aria-label="Go to Slide 3"
+                      class="image-gallery-slide  "
+                      role="button"
+                      style="transform: translate3d(200%, 0, 0);"
+                      tabindex="-1"
+                    >
+                      <div
+                        style="height: 100%;"
+                      />
+                    </div>
+                    <div
+                      aria-label="Go to Slide 4"
+                      class="image-gallery-slide  "
+                      role="button"
+                      style="transform: translate3d(300%, 0, 0);"
+                      tabindex="-1"
+                    >
+                      <div
+                        style="height: 100%;"
+                      />
+                    </div>
+                    <div
+                      aria-label="Go to Slide 5"
+                      class="image-gallery-slide  left "
+                      role="button"
+                      style="transform: translate3d(-100%, 0, 0);"
+                      tabindex="-1"
+                    >
+                      <div>
+                        <img
+                          alt="Museum Island (Berlin)"
+                          class="image-gallery-image"
+                          src=""
+                          title="Museum Island (Berlin)"
+                        />
+                        <span
+                          class="image-gallery-description"
+                        >
+                          Museum Island (Berlin). The cultural and architectural museum complex is included in the list of UNESCO heritage sites. It is located at the northern tip of the Spreinsel Island. The most visited is the Pergamon Museum. Its building contains objects of culture and art of the Ancient collection and Western Asia, as well as reconstructions of ancient buildings of different peoples. Tourists and art critics from all over the world come to the Museum Island.
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  aria-label="Play or Pause Slideshow"
+                  class="image-gallery-icon image-gallery-play-button"
+                  type="button"
+                >
+                  <svg
+                    class="image-gallery-svg"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <polygon
+                      points="5 3 19 12 5 21 5 3"
+                    />
+                  </svg>
+                </button>
+                <button
+                  aria-label="Open Fullscreen"
+                  class="image-gallery-icon image-gallery-fullscreen-button"
+                  type="button"
+                >
+                  <svg
+                    class="image-gallery-svg"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div
+                class="image-gallery-thumbnails-wrapper bottom"
+              >
+                <div
+                  class="image-gallery-thumbnails"
+                >
+                  <div
+                    aria-label="Thumbnail Navigation"
+                    class="image-gallery-thumbnails-container"
+                    style="transform: translate3d(0px, 0, 0);"
+                  >
+                    <button
+                      aria-label="Go to Slide 1"
+                      aria-pressed="true"
+                      class="image-gallery-thumbnail active"
+                      tabindex="0"
+                      type="button"
+                    >
+                      <div
+                        class="image-gallery-thumbnail-inner"
+                      >
+                        <img
+                          class="image-gallery-thumbnail-image"
+                          src="https://top10.travel/wp-content/uploads/2014/09/brandenburgskie-vorota-1.jpg"
+                        />
+                      </div>
+                    </button>
+                    <button
+                      aria-label="Go to Slide 2"
+                      aria-pressed="false"
+                      class="image-gallery-thumbnail"
+                      tabindex="0"
+                      type="button"
+                    >
+                      <div
+                        class="image-gallery-thumbnail-inner"
+                      >
+                        <img
+                          class="image-gallery-thumbnail-image"
+                          src="https://top10.travel/wp-content/uploads/2014/09/reyhstag.jpg"
+                        />
+                      </div>
+                    </button>
+                    <button
+                      aria-label="Go to Slide 3"
+                      aria-pressed="false"
+                      class="image-gallery-thumbnail"
+                      tabindex="0"
+                      type="button"
+                    >
+                      <div
+                        class="image-gallery-thumbnail-inner"
+                      >
+                        <img
+                          class="image-gallery-thumbnail-image"
+                          src="https://top10.travel/wp-content/uploads/2014/09/marienplats-myunhen.jpg"
+                        />
+                      </div>
+                    </button>
+                    <button
+                      aria-label="Go to Slide 4"
+                      aria-pressed="false"
+                      class="image-gallery-thumbnail"
+                      tabindex="0"
+                      type="button"
+                    >
+                      <div
+                        class="image-gallery-thumbnail-inner"
+                      >
+                        <img
+                          class="image-gallery-thumbnail-image"
+                          src="https://top10.travel/wp-content/uploads/2014/09/berlinskaya-stena-1.jpg"
+                        />
+                      </div>
+                    </button>
+                    <button
+                      aria-label="Go to Slide 5"
+                      aria-pressed="false"
+                      class="image-gallery-thumbnail"
+                      tabindex="0"
+                      type="button"
+                    >
+                      <div
+                        class="image-gallery-thumbnail-inner"
+                      >
+                        <img
+                          class="image-gallery-thumbnail-image"
+                          src=""
+                        />
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </body>,
   "container": <div>
+    <img
+      alt="countrImage"
+      class="mainImage"
+      src="https://travel-api-git-main-imbatman.vercel.app/countriesPhoto/11.jpg"
+    />
     <div
-      class="wrapper"
-      data-testid="spinner"
+      class="MuiContainer-root country MuiContainer-maxWidthMd"
     >
       <div
-        class="loadingio-spinner-ripple"
+        class="widgets"
       >
         <div
-          class="ldio"
+          class="timeWidget"
         >
+          <h4>
+            Local time in
+             
+            Berlin
+          </h4>
           <div />
-          <div />
+          <div>
+            April 7, 2021
+          </div>
+        </div>
+        <div
+          class="wrapper"
+          data-testid="spinner"
+        >
+          <div
+            class="loadingio-spinner-ripple"
+          >
+            <div
+              class="ldio"
+            >
+              <div />
+              <div />
+            </div>
+          </div>
+        </div>
+        <div
+          class="currencyWidget"
+        >
+          <h4>
+             
+            Exchange rate
+          </h4>
+          <div>
+            <div>
+              <img
+                alt="flag"
+                src="https://www.countryflags.io/EU/shiny/24.png"
+              />
+              EUR 1 = 
+              1
+               
+              EUR
+              <img
+                alt="flag"
+                src="https://www.countryflags.io/DE/shiny/24.png"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="countryInfo"
+      >
+        <h2
+          class="countryName"
+        >
+          Germany
+        </h2>
+        <div>
+          <h3
+            class="countryHeading"
+          >
+            Capital
+          </h3>
+          <p
+            class="infoContent"
+          >
+            Berlin
+          </p>
+        </div>
+        <div>
+          <h3
+            class="countryHeading"
+          >
+            Info
+          </h3>
+          <p
+            class="infoContent"
+          >
+            Germany, officially the Federal Republic of Germany, is a country at the intersection of Central and Western Europe. It is situated between the Baltic and North seas to the north, and the Alps to the south; covering an area of 357,022 square kilometres (137,847 sq mi), with a population of over 83 million within its 16 constituent states. It borders Denmark to the north, Poland and the Czech Republic to the east, Austria and Switzerland to the south, and France, Luxembourg, Belgium, and the Netherlands to the west. Germany is the second-most populous country in Europe after Russia, as well as the most populous member state of the European Union. Its capital and largest city is Berlin, and its financial centre is Frankfurt; the largest urban area is the Ruhr.
+          </p>
+        </div>
+        <div>
+          <h3
+            class="countryHeading"
+          >
+            Population
+          </h3>
+          <p
+            class="infoContent"
+          >
+            81770900
+             
+            people
+          </p>
+        </div>
+        <div>
+          <h3
+            class="countryHeading"
+          >
+            Currency
+          </h3>
+          <p
+            class="infoContent"
+          >
+            Euro
+            , 
+            €
+          </p>
+        </div>
+      </div>
+      <div
+        class="countryMap"
+        id="mapid"
+      >
+        <div
+          class="heading"
+        >
+          <h3
+            class="countryHeading"
+          >
+            Germany
+             
+            on world map
+          </h3>
+          <button
+            class="MuiButtonBase-root MuiButton-root MuiButton-contained fullScreenBtn MuiButton-containedPrimary"
+            tabindex="0"
+            type="button"
+          >
+            <span
+              class="MuiButton-label"
+            >
+              Fullscreen map
+            </span>
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </button>
+        </div>
+        <div
+          class="fullscreen"
+        >
+          <div
+            class="mapContainer leaflet-container leaflet-grab leaflet-touch-drag"
+            style="position: relative;"
+            tabindex="0"
+          >
+            <div
+              class="leaflet-pane leaflet-map-pane"
+              style="left: 0px; top: 0px;"
+            >
+              <div
+                class="leaflet-pane leaflet-tile-pane"
+              >
+                <div
+                  class="leaflet-layer "
+                  style="z-index: 1;"
+                >
+                  <div
+                    class="leaflet-tile-container leaflet-zoom-animated"
+                    style="z-index: 18; left: 0px; top: 0px;"
+                  >
+                    <img
+                      alt=""
+                      class="leaflet-tile"
+                      role="presentation"
+                      src="https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/5/10/17"
+                      style="width: 256px; height: 256px; left: -49px; top: -127px;"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="leaflet-pane leaflet-shadow-pane"
+              >
+                <img
+                  alt=""
+                  class="leaflet-marker-shadow leaflet-zoom-hide"
+                  src="marker-shadow.png"
+                  style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; left: 0px; top: 0px;"
+                />
+              </div>
+              <div
+                class="leaflet-pane leaflet-overlay-pane"
+              >
+                <svg
+                  height="0"
+                  pointer-events="none"
+                  style="left: 0px; top: 0px;"
+                  viewBox="0 0 0 0"
+                  width="0"
+                >
+                  <g>
+                    <path
+                      class="leaflet-interactive"
+                      d="M-2 2L-2 -2L2 -2L2 2z"
+                      fill="lime"
+                      fill-opacity="0.2"
+                      fill-rule="evenodd"
+                      stroke="none"
+                    />
+                  </g>
+                </svg>
+              </div>
+              <div
+                class="leaflet-pane leaflet-marker-pane"
+              >
+                <img
+                  alt=""
+                  class="leaflet-marker-icon leaflet-zoom-hide leaflet-interactive"
+                  src="marker-icon.png"
+                  style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; left: 0px; top: 0px; z-index: 0;"
+                  tabindex="0"
+                />
+              </div>
+              <div
+                class="leaflet-pane leaflet-tooltip-pane"
+              />
+              <div
+                class="leaflet-pane leaflet-popup-pane"
+              />
+            </div>
+            <div
+              class="leaflet-control-container"
+            >
+              <div
+                class="leaflet-top leaflet-left"
+              >
+                <div
+                  class="leaflet-control-zoom leaflet-bar leaflet-control"
+                >
+                  <a
+                    aria-label="Zoom in"
+                    class="leaflet-control-zoom-in"
+                    href="#"
+                    role="button"
+                    title="Zoom in"
+                  >
+                    +
+                  </a>
+                  <a
+                    aria-label="Zoom out"
+                    class="leaflet-control-zoom-out"
+                    href="#"
+                    role="button"
+                    title="Zoom out"
+                  >
+                    −
+                  </a>
+                </div>
+              </div>
+              <div
+                class="leaflet-top leaflet-right"
+              />
+              <div
+                class="leaflet-bottom leaflet-left"
+              />
+              <div
+                class="leaflet-bottom leaflet-right"
+              >
+                <div
+                  class="leaflet-control-attribution leaflet-control"
+                >
+                  <a
+                    href="https://leafletjs.com"
+                    title="A JS library for interactive maps"
+                  >
+                    Leaflet
+                  </a>
+                   | © 
+                  <a
+                    href="http://osm.org/copyright"
+                  >
+                    OpenStreetMap
+                  </a>
+                   contributors
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="video"
+      >
+        <h3
+          class="countryHeading videoHeading"
+        >
+          Watch the video about
+           
+          Germany
+        </h3>
+        <div
+          class="videoContainer"
+        >
+          <div
+            class=""
+          >
+            <div />
+          </div>
+        </div>
+      </div>
+      <div
+        class="attractions"
+      >
+        <h3
+          class="countryHeading attractionsHeading"
+        >
+          Top-5 plases to visit
+        </h3>
+        <div
+          aria-live="polite"
+          class="image-gallery"
+        >
+          <div
+            class="image-gallery-content bottom"
+          >
+            <div
+              class="image-gallery-slide-wrapper bottom"
+            >
+              <button
+                aria-label="Previous Slide"
+                class="image-gallery-icon image-gallery-left-nav"
+                type="button"
+              >
+                <svg
+                  class="image-gallery-svg"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1"
+                  viewBox="6 0 12 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <polyline
+                    points="15 18 9 12 15 6"
+                  />
+                </svg>
+              </button>
+              <button
+                aria-label="Next Slide"
+                class="image-gallery-icon image-gallery-right-nav"
+                type="button"
+              >
+                <svg
+                  class="image-gallery-svg"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1"
+                  viewBox="6 0 12 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <polyline
+                    points="9 18 15 12 9 6"
+                  />
+                </svg>
+              </button>
+              <div
+                class="image-gallery-swipe"
+              >
+                <div
+                  class="image-gallery-slides"
+                >
+                  <div
+                    aria-label="Go to Slide 1"
+                    class="image-gallery-slide  center "
+                    role="button"
+                    style="transform: translate3d(0%, 0, 0);"
+                    tabindex="-1"
+                  >
+                    <div>
+                      <img
+                        alt="Brandenburg Gate"
+                        class="image-gallery-image"
+                        src="https://top10.travel/wp-content/uploads/2014/09/brandenburgskie-vorota-1.jpg"
+                        title="Brandenburg Gate"
+                      />
+                      <span
+                        class="image-gallery-description"
+                      >
+                        Brandenburg Gate. The symbol of the capital of Germany, since 1989 a symbol of the country's reunification. Built by architect Karl Gottgard Langgans. He designed the gate based on the passages of the Acropolis. The building in the style of classicism is perfectly combined with the rest of the buildings on the Parisian square. The decoration of the gate is a 6-meter high quadriga with a chariot driven by Victoria, the goddess of victory. The bas-reliefs of the inner walls depict the exploits of Hercules.
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    aria-label="Go to Slide 2"
+                    class="image-gallery-slide  right "
+                    role="button"
+                    style="transform: translate3d(100%, 0, 0);"
+                    tabindex="-1"
+                  >
+                    <div>
+                      <img
+                        alt="Reichstag"
+                        class="image-gallery-image"
+                        src="https://top10.travel/wp-content/uploads/2014/09/reyhstag.jpg"
+                        title="Reichstag"
+                      />
+                      <span
+                        class="image-gallery-description"
+                      >
+                        Reichstag. State Assembly Building. This monumental structure is 137 meters long and 103 meters wide. Built in the Italian Renaissance style in 1894. The four towers of the building symbolize the German kingdoms. Their height is 46 meters. You can climb to the top of the glass dome, from where you can see the government quarter and the city itself.
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    aria-label="Go to Slide 3"
+                    class="image-gallery-slide  "
+                    role="button"
+                    style="transform: translate3d(200%, 0, 0);"
+                    tabindex="-1"
+                  >
+                    <div
+                      style="height: 100%;"
+                    />
+                  </div>
+                  <div
+                    aria-label="Go to Slide 4"
+                    class="image-gallery-slide  "
+                    role="button"
+                    style="transform: translate3d(300%, 0, 0);"
+                    tabindex="-1"
+                  >
+                    <div
+                      style="height: 100%;"
+                    />
+                  </div>
+                  <div
+                    aria-label="Go to Slide 5"
+                    class="image-gallery-slide  left "
+                    role="button"
+                    style="transform: translate3d(-100%, 0, 0);"
+                    tabindex="-1"
+                  >
+                    <div>
+                      <img
+                        alt="Museum Island (Berlin)"
+                        class="image-gallery-image"
+                        src=""
+                        title="Museum Island (Berlin)"
+                      />
+                      <span
+                        class="image-gallery-description"
+                      >
+                        Museum Island (Berlin). The cultural and architectural museum complex is included in the list of UNESCO heritage sites. It is located at the northern tip of the Spreinsel Island. The most visited is the Pergamon Museum. Its building contains objects of culture and art of the Ancient collection and Western Asia, as well as reconstructions of ancient buildings of different peoples. Tourists and art critics from all over the world come to the Museum Island.
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button
+                aria-label="Play or Pause Slideshow"
+                class="image-gallery-icon image-gallery-play-button"
+                type="button"
+              >
+                <svg
+                  class="image-gallery-svg"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <polygon
+                    points="5 3 19 12 5 21 5 3"
+                  />
+                </svg>
+              </button>
+              <button
+                aria-label="Open Fullscreen"
+                class="image-gallery-icon image-gallery-fullscreen-button"
+                type="button"
+              >
+                <svg
+                  class="image-gallery-svg"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              class="image-gallery-thumbnails-wrapper bottom"
+            >
+              <div
+                class="image-gallery-thumbnails"
+              >
+                <div
+                  aria-label="Thumbnail Navigation"
+                  class="image-gallery-thumbnails-container"
+                  style="transform: translate3d(0px, 0, 0);"
+                >
+                  <button
+                    aria-label="Go to Slide 1"
+                    aria-pressed="true"
+                    class="image-gallery-thumbnail active"
+                    tabindex="0"
+                    type="button"
+                  >
+                    <div
+                      class="image-gallery-thumbnail-inner"
+                    >
+                      <img
+                        class="image-gallery-thumbnail-image"
+                        src="https://top10.travel/wp-content/uploads/2014/09/brandenburgskie-vorota-1.jpg"
+                      />
+                    </div>
+                  </button>
+                  <button
+                    aria-label="Go to Slide 2"
+                    aria-pressed="false"
+                    class="image-gallery-thumbnail"
+                    tabindex="0"
+                    type="button"
+                  >
+                    <div
+                      class="image-gallery-thumbnail-inner"
+                    >
+                      <img
+                        class="image-gallery-thumbnail-image"
+                        src="https://top10.travel/wp-content/uploads/2014/09/reyhstag.jpg"
+                      />
+                    </div>
+                  </button>
+                  <button
+                    aria-label="Go to Slide 3"
+                    aria-pressed="false"
+                    class="image-gallery-thumbnail"
+                    tabindex="0"
+                    type="button"
+                  >
+                    <div
+                      class="image-gallery-thumbnail-inner"
+                    >
+                      <img
+                        class="image-gallery-thumbnail-image"
+                        src="https://top10.travel/wp-content/uploads/2014/09/marienplats-myunhen.jpg"
+                      />
+                    </div>
+                  </button>
+                  <button
+                    aria-label="Go to Slide 4"
+                    aria-pressed="false"
+                    class="image-gallery-thumbnail"
+                    tabindex="0"
+                    type="button"
+                  >
+                    <div
+                      class="image-gallery-thumbnail-inner"
+                    >
+                      <img
+                        class="image-gallery-thumbnail-image"
+                        src="https://top10.travel/wp-content/uploads/2014/09/berlinskaya-stena-1.jpg"
+                      />
+                    </div>
+                  </button>
+                  <button
+                    aria-label="Go to Slide 5"
+                    aria-pressed="false"
+                    class="image-gallery-thumbnail"
+                    tabindex="0"
+                    type="button"
+                  >
+                    <div
+                      class="image-gallery-thumbnail-inner"
+                    >
+                      <img
+                        class="image-gallery-thumbnail-image"
+                        src=""
+                      />
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

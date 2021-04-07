@@ -17,7 +17,7 @@ const Country = (props) => {
   const { slug } = props.match.params;
   const [country, setCountry] = useState([]);
   const code = useSelector((state) => state.code);
-
+  
   useEffect(() => {
     let isCancelled = false;
     const getData = async () => {
@@ -39,7 +39,11 @@ const Country = (props) => {
       }
     };
     getData();
-    return () => (isCancelled = true);
+
+    return () => {
+      isCancelled = true;
+      setCountry([]);
+    };
   }, [slug]);
 
   return (

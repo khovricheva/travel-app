@@ -6,7 +6,7 @@ import { Switch, Route } from 'react-router-dom';
 import CountrySearch from './components/Countries/CountrySearch';
 import Countries from './components/Countries';
 import Spinner from './components/Spinner';
-import axios from 'axios'
+import axios from 'axios';
 
 const Country = lazy(() => import('./components/Country'));
 const NotFound = lazy(() => import('./components/NotFound'));
@@ -35,28 +35,31 @@ const App = () => {
     };
     getData();
 
-    return () => (isCancelled = true);
+    return () => {
+      isCancelled = true;
+      setCountries([]);
+    };
   }, []);
 
   return (
     <>
-        <Header />
-        <Suspense fallback={<Spinner />}>
-          <Switch>
-            <Route
-              path="/"
-              exact
-              render={() => <Countries countries={countries} />}
-            />
-            <Route
-              path="/search/text=:slug"
-              render={() => <CountrySearch countries={countries} />}
-            />
-            <Route path="/country/:slug" component={Country} />
-            <Route component={NotFound} />
-          </Switch>
-        </Suspense>
-        <Footer />
+      <Header />
+      <Suspense fallback={<Spinner />}>
+        <Switch>
+          <Route
+            path="/"
+            exact
+            render={() => <Countries countries={countries} />}
+          />
+          <Route
+            path="/search/text=:slug"
+            render={() => <CountrySearch countries={countries} />}
+          />
+          <Route path="/country/:slug" component={Country} />
+          <Route component={NotFound} />
+        </Switch>
+      </Suspense>
+      <Footer />
     </>
   );
 };

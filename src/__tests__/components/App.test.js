@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, cleanup } from '../test-utils';
+import { render, cleanup, screen } from '../test-utils';
 import axiosMock from 'axios';
 import App from '../../App';
 
@@ -25,21 +25,17 @@ describe('App component', () => {
       },
     ],
   };
-
-  it('renders correctly', () => {
+  
+  it('mocking axios request', async () => {
     axiosMock.get.mockResolvedValueOnce(data);
     const wrapper = render(<App />);
-    expect(wrapper).toMatchSnapshot();
-  });
 
-  it('mocking axios request', async () => {
-
-    axiosMock.get.mockResolvedValueOnce(data);
-    const { getByTestId, findByText } = render(<App />);
-
-    expect(getByTestId('spinner', {}, { timeout: 2000 })).toBeInTheDocument;
-
-    expect(await findByText('Austria', {}, { timeout: 2000 }))
+    expect(screen.getByTestId('spinner', {}, { timeout: 2000 }))
       .toBeInTheDocument;
+
+    expect(await screen.findByText('Austria', {}, { timeout: 2000 }))
+      .toBeInTheDocument;
+
+    expect(wrapper).toMatchSnapshot();
   });
 });
