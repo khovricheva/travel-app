@@ -6,14 +6,19 @@ import './CurrencyWidget.scss';
 
 const CurrencyWidget = ({ currencyCode, countryCode }) => {
   const code = useSelector((state) => state.code);
-  const [currency, setCurrency] = useState(0);
+  const [currency, setCurrency] = useState();
 
   useEffect(() => {
     let isCancelled = false;
     const getData = async () => {
       try {
         const result = await axios.get(`https://api.ratesapi.io/api/latest`);
-        if (!isCancelled) setCurrency(result.data.rates[currencyCode]);
+        if (!isCancelled) {
+          let timer = setTimeout(() => {
+            setCurrency(result.data.rates[currencyCode]);
+            clearTimeout(timer);
+          }, 500);
+        }
       } catch (e) {
         if (!isCancelled) {
           console.log(e.message);
@@ -25,15 +30,15 @@ const CurrencyWidget = ({ currencyCode, countryCode }) => {
   }, [currency, currencyCode]);
 
   return (
-    <div className='currencyWidget'>
+    <div className="currencyWidget">
       <h4> {translate.headingCurrencyWidget[code]}</h4>
       <div>
         <div>
-          <img src={`https://www.countryflags.io/EU/shiny/24.png`} alt='flag' />
+          <img src={`https://www.countryflags.io/EU/shiny/24.png`} alt="flag" />
           EUR 1 = {currency ? currency.toFixed(2) : 1} {currencyCode}
           <img
             src={`https://www.countryflags.io/${countryCode}/shiny/24.png`}
-            alt='flag'
+            alt="flag"
           />
         </div>
       </div>

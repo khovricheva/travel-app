@@ -399,11 +399,11 @@ Object {
             class="MuiPaper-root MuiCard-root card MuiPaper-elevation1 MuiPaper-rounded"
           >
             <div
-              alt="Country Photo"
+              alt="Austria"
               class="MuiCardMedia-root countryImage"
               media="picture"
               style="background-image: url(https://travel-api-git-main-imbatman.vercel.app/countriesPhoto/1.jpg);"
-              title="Country Photo"
+              title="Austria"
             />
             <div
               class="MuiCardContent-root"
@@ -906,11 +906,11 @@ Object {
           class="MuiPaper-root MuiCard-root card MuiPaper-elevation1 MuiPaper-rounded"
         >
           <div
-            alt="Country Photo"
+            alt="Austria"
             class="MuiCardMedia-root countryImage"
             media="picture"
             style="background-image: url(https://travel-api-git-main-imbatman.vercel.app/countriesPhoto/1.jpg);"
-            title="Country Photo"
+            title="Austria"
           />
           <div
             class="MuiCardContent-root"

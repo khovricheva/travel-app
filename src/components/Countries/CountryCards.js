@@ -32,9 +32,9 @@ const CountryCards = (props) => {
             <CardMedia
               media="picture"
               className="countryImage"
-              alt="Country Photo"
+              alt={item.name.en}
               image={item.introPhoto}
-              title="Country Photo"
+              title={item.name.en}
             />
             <CardContent
               style={{ position: 'relative', backgroundColor: 'transparent' }}

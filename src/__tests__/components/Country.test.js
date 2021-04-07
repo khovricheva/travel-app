@@ -11,7 +11,9 @@ describe('Country', () => {
   };
 
   it('get Snapshot after data fetch', async () => {
+
     axiosMock.get.mockResolvedValueOnce(data);
+
     const wrapper = render(<Country {...defaultProps} />);
 
     expect(screen.getByTestId('spinner', {}, { timeout: 3000 }))
