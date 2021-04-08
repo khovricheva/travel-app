@@ -22,3 +22,9 @@
     color: $light-blue;
   }
 }
+
+@media (max-width: 320px) {
+  .image-gallery-slide .image-gallery-description {
+    top: 0;
+  }
+}

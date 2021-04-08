@@ -10,6 +10,11 @@ body {
   background-color: $white;
   transition: background-color 500ms linear;
 }
+#root {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
 
 body.dark-mode {
   background-color: $bgPage-dark;
