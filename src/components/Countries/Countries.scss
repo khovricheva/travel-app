@@ -24,7 +24,6 @@
       flex-direction: column;
       justify-content: space-between;
       color: $white;
-      cursor: pointer;
       transition: transform 0.3s;
 
       .countryImage {
@@ -76,6 +75,10 @@
       .card {
         max-width: 30rem;
         min-height: 10rem;
+        transition: none;
+      }
+      .card:hover {
+        transform: none;
       }
     }
   }

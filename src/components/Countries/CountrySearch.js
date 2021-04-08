@@ -32,7 +32,7 @@ const CountrySearch = ({countries}) => {
         localStorage.clear();
       }}
     >
-      <CountryCards countries={countryResult} />{' '}
+      <CountryCards countries={countryResult} />
     </ErrorBoundary>
   );
 };

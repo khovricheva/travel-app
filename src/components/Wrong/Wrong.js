@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import translate from '../../translate';
 import '../NotFound/NotFound.scss'
+
 const Wrong = () => {
   const code = useSelector((state) => state.code);
 
